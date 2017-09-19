@@ -1,0 +1,148 @@
+Test (2A): election after network failure ...
+Follower2 find time out and become candidate2,current term is 0
+Follower1 find time out and become candidate1,current term is 0
+candidate1 send requestvote rpc to server2,current term is 1
+Follower0 find time out and become candidate0,current term is 0
+candidate0 send requestvote rpc to server2,current term is 1
+candidate1 send requestvote rpc to server0,current term is 1
+candidate2 send requestvote rpc to server1,current term is 1
+candidate0 send requestvote rpc to server1,current term is 1
+candidate2 send requestvote rpc to server0,current term is 1
+server0 recieve vote from server2, is true,currresultent term is 1
+server1 recieve vote from server0, is true,currresultent term is 1
+server1 recieve vote from server2, is true,currresultent term is 1
+server2 recieve vote from server1, is true,currresultent term is 1
+server0 recieve vote from server1, is true,currresultent term is 1
+server2 recieve vote from server0, is true,currresultent term is 1
+Become candidate1,current term is 1
+Become candidate2,current term is 1
+candidate2 send requestvote rpc to server0,current term is 2
+candidate1 send requestvote rpc to server0,current term is 2
+server2 recieve vote from server0, is true,currresultent term is 2
+candidate2 send requestvote rpc to server1,current term is 2
+server1 recieve vote from server0, is true,currresultent term is 2
+Become candidate2,current term is 2
+leader2 send appendentry rpc to followers,current term is 2
+candidate1 send requestvote rpc to server2,current term is 2
+server1 recieve vote from server2, is true,currresultent term is 2
+Become candidate0,current term is 2
+candidate0 send requestvote rpc to server2,current term is 3
+candidate0 send requestvote rpc to server1,current term is 3
+Leader2 recieve vote from server0,result is true,current term is 2
+leader2 send appendentry rpc to followers,current term is 3
+server2 recieve vote from server1, is true,currresultent term is 3
+server0 recieve vote from server1, is true,currresultent term is 3
+Become candidate0,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 recieve vote from server1,result is true,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Leader2 recieve vote from server1,result is true,current term is 3
+Leader2 send heartbeat,current term is 3
+Become candidate1,current term is 3
+\e]P9E33636Follower1 has got heartbeat,current term is 3
+Leader0 recieve vote from server2,result is true,current term is 3
+Leader0 send heartbeat,current term is 3
+server0 recieve vote from server2, is true,currresultent term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 recieve vote from server1,result is true,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+\e]P9E33636Follower2 has got heartbeat,current term is 3
+\e]P9E33636Follower2 has got heartbeat,current term is 3
+\e]P9E33636Follower1 has got heartbeat,current term is 3
+Leader0 recieve vote from server2,result is true,current term is 3
+Leader0 send heartbeat,current term is 3
+Test （2A): first leader is: 0
+Test （2A): disconnect leader1
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 can't recieve from server1,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 can't recieve from server2,current term is 3
+Leader0 send heartbeat,current term is 3
+Follower1 find time out and become candidate1,current term is 3
+candidate1 send requestvote rpc to server2,current term is 4
+Follower2 find time out and become candidate2,current term is 3
+candidate2 send requestvote rpc to server1,current term is 4
+server1 recieve vote from server2, is true,currresultent term is 4
+candidate1 send requestvote rpc to server0,current term is 4
+server2 recieve vote from server1, is true,currresultent term is 4
+candidate2 send requestvote rpc to server0,current term is 4
+leader0 send appendentry rpc to followers,current term is 3
+server1 can't recieve from server0,current term is 4
+server2 can't recieve from server0,current term is 4
+Leader0 can't recieve from server1,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 can't recieve from server2,current term is 3
+Leader0 send heartbeat,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Become candidate1,current term is 4
+Become candidate2,current term is 4
+candidate1 send requestvote rpc to server0,current term is 5
+candidate2 send requestvote rpc to server1,current term is 5
+candidate2 send requestvote rpc to server0,current term is 5
+candidate1 send requestvote rpc to server2,current term is 5
+server1 recieve vote from server2, is true,currresultent term is 5
+server2 recieve vote from server1, is true,currresultent term is 5
+Leader0 can't recieve from server1,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+server1 can't recieve from server0,current term is 5
+server2 can't recieve from server0,current term is 5
+Leader0 can't recieve from server2,current term is 3
+Leader0 send heartbeat,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Become candidate1,current term is 5
+Become candidate2,current term is 5
+Leader0 can't recieve from server1,current term is 3
+candidate1 send requestvote rpc to server0,current term is 6
+leader0 send appendentry rpc to followers,current term is 3
+candidate2 send requestvote rpc to server0,current term is 6
+candidate2 send requestvote rpc to server1,current term is 6
+candidate1 send requestvote rpc to server2,current term is 6
+server2 recieve vote from server1, is true,currresultent term is 6
+server1 recieve vote from server2, is true,currresultent term is 6
+server1 can't recieve from server0,current term is 6
+Leader0 can't recieve from server2,current term is 3
+Leader0 send heartbeat,current term is 3
+server2 can't recieve from server0,current term is 6
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 can't recieve from server1,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Become candidate2,current term is 6
+Become candidate1,current term is 6
+candidate1 send requestvote rpc to server0,current term is 7
+candidate2 send requestvote rpc to server1,current term is 7
+candidate2 send requestvote rpc to server0,current term is 7
+server2 recieve vote from server1, is true,currresultent term is 7
+candidate1 send requestvote rpc to server2,current term is 7
+server1 recieve vote from server2, is true,currresultent term is 7
+Leader0 can't recieve from server2,current term is 3
+Leader0 send heartbeat,current term is 3
+server2 can't recieve from server0,current term is 7
+server1 can't recieve from server0,current term is 7
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 can't recieve from server1,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 can't recieve from server2,current term is 3
+Leader0 send heartbeat,current term is 3
+Become candidate2,current term is 7
+candidate2 send requestvote rpc to server0,current term is 8
+candidate2 send requestvote rpc to server1,current term is 8
+Become candidate1,current term is 7
+candidate1 send requestvote rpc to server0,current term is 8
+candidate1 send requestvote rpc to server2,current term is 8
+server1 recieve vote from server2, is true,currresultent term is 8
+server2 recieve vote from server1, is true,currresultent term is 8
+leader0 send appendentry rpc to followers,current term is 3
+server2 can't recieve from server0,current term is 8
+server1 can't recieve from server0,current term is 8
+Leader0 can't recieve from server1,current term is 3
+leader0 send appendentry rpc to followers,current term is 3
+Leader0 can't recieve from server2,current term is 3
+Leader0 send heartbeat,current term is 3
+Become candidate2,current term is 8
+candidate2 send requestvote rpc to server1,current term is 9
+candidate2 send requestvote rpc to server0,current term is 9
+Become candidate1,current term is 8
+candidate1 send requestvote rpc to server2,current term is 9
+candidate1 send requestvote rpc to server0,current term is 9
+server2 recieve vote from server1, is true,currresultent term is 9
+server1 recieve vote from server2, is true,currresultent term is 9

@@ -8,7 +8,7 @@ package raft
 // test with the original before submitting.
 //
 
-import "labrpc"
+import "MIT-6.824-2017/src/labrpc"
 import "log"
 import "sync"
 import "testing"
@@ -26,6 +26,14 @@ func randstring(n int) string {
 	return s[0:n]
 }
 
+//
+// 主要成員類型：
+// labrpc.Network
+// raft系統節點數組rafts
+// 节点应用请求的反馈信息applyErr
+// 节点实现永久存储的类型saved
+// 每个节点rpc调用暴露的接口endnames
+// 每个节点提交的日志
 type config struct {
 	mu        sync.Mutex
 	t         *testing.T
@@ -40,6 +48,12 @@ type config struct {
 	logs      []map[int]int // copy of each server's committed entries
 }
 
+//
+// 创建初始化的raft系統，返回值是config类型
+// 对config结构体变量初始化
+// 第一个for循环中调用start1函数进行新建初始化raft节点
+// 最后相互连接每个节点
+//
 func make_config(t *testing.T, n int, unreliable bool) *config {
 	runtime.GOMAXPROCS(4)
 	cfg := &config{}
@@ -257,6 +271,7 @@ func (cfg *config) setlongreordering(longrel bool) {
 
 // check that there's exactly one leader.
 // try a few times in case re-elections are needed.
+// checkOneLeader函数中循环10次，每次sleep500ms，每次调用raft节点的GetState函数获取节点当前状态，即是否处于Leader状态，判断系统中是否只存在一个Leader
 func (cfg *config) checkOneLeader() int {
 	for iters := 0; iters < 10; iters++ {
 		time.Sleep(500 * time.Millisecond)
