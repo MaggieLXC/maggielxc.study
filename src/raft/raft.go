@@ -18,7 +18,7 @@ package raft
 //
 
 import (
-	"fmt"
+	"log"
 	"math/rand"
 	"sync"
 	"time"
@@ -36,8 +36,19 @@ const (
 	CANDIDATE
 )
 
+// define heartbeat interval
 const (
-	HEARTBEATINTERVAL time.Duration = time.Millisecond * 50
+	HEARTBEATINTERVAL time.Duration = time.Millisecond * 30
+)
+
+// define log class
+const (
+	LEADERSENDHEARTBEAT int = 10
+	LEADERSENDAPPENDENTRY
+	CANDIDATESENDVOTEFOR
+	FOLLOWERTIMEOUTBECABDIDATE
+	FOLLOWERRECEIVEAPPENDENTRY
+	FOLLOWERRESPONSEAPPENDENTRY
 )
 
 //
@@ -105,19 +116,13 @@ type Raft struct {
 	timer *time.Timer
 }
 
-//生成指定区间内的随机数
+// GenerateRangeNum : 生成指定区间内的随机数
 func GenerateRangeNum(min, max int) int {
-	rand.Seed(time.Now().Unix()) //选取时间为随机数种子
+	//rand.Seed(time.Now().UnixNano()) //选取时间为随机数种子
 	randNum := rand.Intn(max-min) + min
+	log.Printf("election-out time: %v\n", randNum)
 	return randNum
 }
-
-// func (rf *Raft) resetTimer() {
-// 	electionTimeout := GenerateRangeNum(150, 300)
-// 	rf.timer = time.NewTimer(time.Millisecond * time.Duration(electionTimeout))
-// 	<-rf.timer.C
-// 	go rf.handleTimer()
-// }
 
 func (rf *Raft) getLastLogIndex() int {
 	if len(rf.logs) == 0 {
@@ -133,26 +138,10 @@ func (rf *Raft) getLastLogTerm() int {
 	return rf.logs[len(rf.logs)-1].Term
 }
 
-func (rf *Raft) CandidateAction() {
-	rf.mu.Lock()
-	//defer rf.mu.Unlock()
+// CandidateRequestVote : when a server become cadidate, it will do
+func (rf *Raft) CandidateRequestVote(requestargs RequestVoteArgs) {
 
-	rf.currentTerm++
-	rf.votedFor = rf.me
-	rf.grantedVotesCount = 1
-	rf.persist()
-
-	//初始化requestvote
-	args := RequestVoteArgs{
-		Term:         rf.currentTerm,
-		CandidateID:  rf.me,
-		LastLogIndex: len(rf.logs) - 1,
-	}
-	if len(rf.logs) > 0 {
-		args.LastLogTerm = rf.logs[rf.getLastLogIndex()].Term
-	}
-	rf.mu.Unlock()
-
+	//同时发送给除了自己以外的servers
 	for server := range rf.peers {
 		if server == rf.me {
 			continue
@@ -163,11 +152,15 @@ func (rf *Raft) CandidateAction() {
 			if ok == 0 || ok == 1 {
 				rf.handleVoteResult(reply)
 			}
-		}(server, args)
-
+		}(server, requestargs)
 	}
+
+	//这里要考虑到在发送的过程中出现：
+	//1、网路阻塞的情况
+	//2、收到来自新leader的heartbeat
+	//3、自己选举成功
 	select {
-	case <-time.After(time.Duration(GenerateRangeNum(150, 300)) * time.Millisecond):
+	case <-time.After(time.Duration(GenerateRangeNum(450, 600)) * time.Millisecond):
 		rf.state = CANDIDATE
 	case <-rf.chanHeartbeat:
 		rf.state = FOLLOWER
@@ -291,7 +284,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		//设置返回消息
 		reply.Term = args.Term
 		reply.VoteGranted = true
-		//rf.chanGrantVote <- true
+		rf.chanGrantVote <- true
 		return
 	}
 
@@ -379,18 +372,23 @@ func (rf *Raft) handleVoteResult(reply RequestVoteReply) {
 // the struct itself.
 // 该函数用于调用rpc请求
 func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *RequestVoteReply) int {
-	fmt.Printf("candidate%v send requestvote rpc to server%v,current term is %v\n", rf.me, server, rf.currentTerm)
+	log.Printf("candidate%v send requestvote rpc to server%v,current term is %v\n", rf.me, server, rf.currentTerm)
+
 	ok := make(chan bool, 1)
 	var re bool
+
+	// 启用一个协程发送请求，使用channel防止超时
 	go func(ok chan bool) {
 		ok <- rf.peers[server].Call("Raft.RequestVote", args, reply)
 	}(ok)
+
+	// 要对发送超时进行处理
 	select {
 	case <-time.After(time.Millisecond * 60):
-		fmt.Printf("server%v can't recieve from server%v,current term is %v\n", rf.me, server, rf.currentTerm)
+		log.Printf("server%v can't recieve from server%v,current term is %v\n", rf.me, server, rf.currentTerm)
 		return -1
 	case re = <-ok:
-		fmt.Printf("server%v recieve vote from server%v, is %v,currresultent term is %v\n", rf.me, server, re, rf.currentTerm)
+		log.Printf("server%v recieve vote from server%v, is %v,current result term is %v\n", rf.me, server, re, rf.currentTerm)
 		if re == false {
 			return 0
 		} else {
@@ -403,19 +401,22 @@ func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *Reques
 func (rf *Raft) SendAppendEntriedToFollower(server int, args AppendEntriesArgs, reply *AppendEntriesReply) int {
 	//返回0和1都表示rpc正常
 	//返回-1表示出现超时
-	fmt.Printf("leader%v send appendentry rpc to followers,current term is %v\n", rf.me, rf.currentTerm)
+
+	log.Printf("leader%v send appendentry rpc to followers,current term is %v\n", rf.me, rf.currentTerm)
 	ok := make(chan bool, 1)
 	//ok <- rf.peers[server].Call("Raft.AppendEntries", args, reply)
+
 	var re bool
 	go func(ok chan bool) {
 		ok <- rf.peers[server].Call("Raft.AppendEntries", args, reply)
 	}(ok)
+
 	select {
 	case <-time.After(time.Millisecond * 60):
-		fmt.Printf("Leader%v can't recieve from server%v,current term is %v\n", rf.me, server, rf.currentTerm)
+		log.Printf("Leader%v can't recieve from server%v,current term is %v\n", rf.me, server, rf.currentTerm)
 		return -1
 	case re = <-ok:
-		fmt.Printf("Leader%v recieve vote from server%v,result is %v,current term is %v\n", rf.me, server, re, rf.currentTerm)
+		log.Printf("Leader%v recieve vote from server%v,result is %v,current term is %v\n", rf.me, server, re, rf.currentTerm)
 		if re == false {
 			return 0
 		} else {
@@ -424,56 +425,75 @@ func (rf *Raft) SendAppendEntriedToFollower(server int, args AppendEntriesArgs, 
 	}
 }
 
+//SendAppnedEntriesToAllFollower ：
 func (rf *Raft) SendAppnedEntriesToAllFollower() {
 	for server := range rf.peers {
 		if server == rf.me {
 			continue
 		}
 
+		rf.mu.Lock()
 		args := AppendEntriesArgs{
 			Term:        rf.currentTerm,
 			LeaderId:    rf.me,
-			PreLogIndex: rf.getLastLogIndex(),
-			PreLogTerm:  rf.getLastLogTerm(),
+			PreLogIndex: rf.nextIndex[server] - 1,
+		}
+		if rf.nextIndex[server]-1 >= 0 {
+			args.PreLogTerm = rf.logs[rf.nextIndex[server]-1].Term
+		} else {
+			args.PreLogTerm = -1
 		}
 		if rf.nextIndex[server] < rf.getLastLogIndex() {
 			args.Entries = rf.logs[rf.nextIndex[server]:]
 		}
 		args.LeaderCommit = rf.committedIndex
+		rf.mu.Unlock()
 
 		var reply AppendEntriesReply
-		//for {
-		ok := rf.SendAppendEntriedToFollower(server, args, &reply)
-		if ok == 0 || ok == 1 {
-			rf.handleAppendEntriesReply(server, reply)
-			//break
-		}
-		//}
-
+		go func(server int, args AppendEntriesArgs, reply *AppendEntriesReply) {
+			ok := rf.SendAppendEntriedToFollower(server, args, reply)
+			if ok == 0 || ok == 1 {
+				rf.handleAppendEntriesReply(server, reply)
+			}
+		}(server, args, &reply)
 	}
+
+	//这里也是需要判断append是否成功
 }
 
-// folllower handle appendenttry reply
+func (rf *Raft) isPrelogMatch(preIndex int, preTerm int) int {
+	// sematic1: reply false if log doesn't contain an entry at prevLogIndex whose
+	// term matches preLogTerm
+	return 2
+}
+
+// AppendEntries ： folllower handle appendenttry reply
 func (rf *Raft) AppendEntries(args AppendEntriesArgs, reply *AppendEntriesReply) {
 	rf.mu.Lock()
 	rf.mu.Unlock()
 
+	// leader‘s term < follower’s term
 	if args.Term < rf.currentTerm {
 		reply.Success = false
 		reply.Term = rf.currentTerm
 		return
 	}
 
-	rf.chanHeartbeat <- true
-	//heartbeat
+	// as heartbeat
 	if args.Entries == nil {
 		reply.Success = true
+		rf.chanHeartbeat <- true
+		return
 	}
+
+	// if there is something to handle
+	// judge if prelogindex and prelogterm 是否匹配
+
 	return
 }
 
 // handle the appemndrequest result
-func (rf *Raft) handleAppendEntriesReply(server int, reply AppendEntriesReply) {
+func (rf *Raft) handleAppendEntriesReply(server int, reply *AppendEntriesReply) {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 
@@ -570,29 +590,77 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 	rf.persist()
 
+	rand.New(rand.NewSource(time.Now().UnixNano()))
 	go func() {
 		for {
 			switch rf.state {
 			case FOLLOWER:
-				select {
-				case <-rf.chanHeartbeat:
-					fmt.Printf("Follower%v has got heartbeat,current term is %v\n", rf.me, rf.currentTerm) //如果接收到heartbeat
-				case <-rf.chanGrantVote:
-					fmt.Printf("Follower%v has votefor candidate%v,current term is %v\n", rf.me, rf.votedFor, rf.currentTerm)
-				case <-time.After(time.Millisecond * time.Duration(GenerateRangeNum(150, 300))):
-					rf.state = CANDIDATE
-					fmt.Printf("Follower%v find time out and become candidate%v,current term is %v\n", rf.me, rf.me, rf.currentTerm)
-				}
+				rf.Follower()
 			case LEADER:
-				rf.SendAppnedEntriesToAllFollower()
-				fmt.Printf("Leader%v send heartbeat,current term is %v\n", rf.me, rf.currentTerm)
-				time.Sleep(HEARTBEATINTERVAL)
+				rf.Leader()
 			case CANDIDATE:
-				rf.CandidateAction()
-				fmt.Printf("Become candidate%v,current term is %v\n", rf.me, rf.currentTerm)
+				rf.Candidate()
 			}
 		}
 	}()
-	//rf.resetTimer()
 	return rf
+}
+
+// Leader : 成为Leader之后，常规要做的事情就是给Followers发送心跳和appendentries的消息
+func (rf *Raft) Leader() {
+	rf.SendAppnedEntriesToAllFollower()
+	log.Printf("Leader%v send heartbeat,current term is %v\n", rf.me, rf.currentTerm)
+	time.Sleep(HEARTBEATINTERVAL)
+}
+
+// Candidate : 成为Candidate，说明新一轮的选举开始了，需要进行一些操作
+func (rf *Raft) Candidate() {
+	rf.mu.Lock()
+	//defer rf.mu.Unlock()
+
+	rf.currentTerm++
+	rf.votedFor = rf.me
+	rf.grantedVotesCount = 1
+	rf.persist()
+
+	//初始化requestvote
+	args := RequestVoteArgs{
+		Term:         rf.currentTerm,
+		CandidateID:  rf.me,
+		LastLogIndex: len(rf.logs) - 1,
+	}
+	if len(rf.logs) > 0 {
+		args.LastLogTerm = rf.logs[rf.getLastLogIndex()].Term
+	}
+	rf.mu.Unlock()
+	rf.CandidateRequestVote(args)
+	log.Printf("Become candidate%v,current term is %v\n", rf.me, rf.currentTerm)
+}
+
+// Follower ：Follwer在正常情况下要做的
+// 1、接受心跳rpc并回复
+// 2、接受vote rpc并回复
+// 3、election time out，开始新一轮的选举
+func (rf *Raft) Follower() {
+	select {
+	case <-rf.chanHeartbeat:
+		log.Printf("Follower%v has got heartbeat,current term is %v\n", rf.me, rf.currentTerm) //如果接收到heartbeat
+	case <-rf.chanGrantVote:
+		log.Printf("Follower%v has votefor candidate%v,current term is %v\n", rf.me, rf.votedFor, rf.currentTerm)
+	case <-time.After(time.Millisecond * time.Duration(GenerateRangeNum(450, 600))):
+		rf.state = CANDIDATE
+		log.Printf("Follower%v find time out and become candidate%v,current term is %v\n", rf.me, rf.me, rf.currentTerm)
+	}
+
+}
+
+//日志打印 undo
+func (rf *Raft) logPrint(server int, role int, kind int) {
+	switch role {
+	case LEADER:
+		if kind == LEADERSENDHEARTBEAT {
+		}
+	case FOLLOWER:
+	case CANDIDATE:
+	}
 }

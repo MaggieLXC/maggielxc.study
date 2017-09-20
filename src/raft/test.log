@@ -1,148 +1,1332 @@
 Test (2A): election after network failure ...
-Follower2 find time out and become candidate2,current term is 0
-Follower1 find time out and become candidate1,current term is 0
-candidate1 send requestvote rpc to server2,current term is 1
-Follower0 find time out and become candidate0,current term is 0
-candidate0 send requestvote rpc to server2,current term is 1
-candidate1 send requestvote rpc to server0,current term is 1
-candidate2 send requestvote rpc to server1,current term is 1
-candidate0 send requestvote rpc to server1,current term is 1
-candidate2 send requestvote rpc to server0,current term is 1
-server0 recieve vote from server2, is true,currresultent term is 1
-server1 recieve vote from server0, is true,currresultent term is 1
-server1 recieve vote from server2, is true,currresultent term is 1
-server2 recieve vote from server1, is true,currresultent term is 1
-server0 recieve vote from server1, is true,currresultent term is 1
-server2 recieve vote from server0, is true,currresultent term is 1
-Become candidate1,current term is 1
-Become candidate2,current term is 1
-candidate2 send requestvote rpc to server0,current term is 2
-candidate1 send requestvote rpc to server0,current term is 2
-server2 recieve vote from server0, is true,currresultent term is 2
-candidate2 send requestvote rpc to server1,current term is 2
-server1 recieve vote from server0, is true,currresultent term is 2
-Become candidate2,current term is 2
-leader2 send appendentry rpc to followers,current term is 2
-candidate1 send requestvote rpc to server2,current term is 2
-server1 recieve vote from server2, is true,currresultent term is 2
-Become candidate0,current term is 2
-candidate0 send requestvote rpc to server2,current term is 3
-candidate0 send requestvote rpc to server1,current term is 3
-Leader2 recieve vote from server0,result is true,current term is 2
-leader2 send appendentry rpc to followers,current term is 3
-server2 recieve vote from server1, is true,currresultent term is 3
-server0 recieve vote from server1, is true,currresultent term is 3
-Become candidate0,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 recieve vote from server1,result is true,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Leader2 recieve vote from server1,result is true,current term is 3
-Leader2 send heartbeat,current term is 3
-Become candidate1,current term is 3
-\e]P9E33636Follower1 has got heartbeat,current term is 3
-Leader0 recieve vote from server2,result is true,current term is 3
-Leader0 send heartbeat,current term is 3
-server0 recieve vote from server2, is true,currresultent term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 recieve vote from server1,result is true,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-\e]P9E33636Follower2 has got heartbeat,current term is 3
-\e]P9E33636Follower2 has got heartbeat,current term is 3
-\e]P9E33636Follower1 has got heartbeat,current term is 3
-Leader0 recieve vote from server2,result is true,current term is 3
-Leader0 send heartbeat,current term is 3
-Test （2A): first leader is: 0
+2017/09/20 21:18:38 election-out time: 581
+2017/09/20 21:18:38 election-out time: 537
+2017/09/20 21:18:38 election-out time: 497
+2017/09/20 21:18:39 Follower2 find time out and become candidate2,current term is 0
+2017/09/20 21:18:39 candidate2 send requestvote rpc to server1,current term is 1
+2017/09/20 21:18:39 election-out time: 509
+2017/09/20 21:18:39 candidate2 send requestvote rpc to server0,current term is 1
+2017/09/20 21:18:39 server2 recieve vote from server1, is true,current result term is 1
+2017/09/20 21:18:39 Become candidate2,current term is 1
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Follower1 has votefor candidate2,current term is 1
+2017/09/20 21:18:39 election-out time: 481
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 468
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 server2 recieve vote from server0, is true,current result term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower0 has votefor candidate2,current term is 1
+2017/09/20 21:18:39 election-out time: 475
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 590
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 556
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 450
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 494
+2017/09/20 21:18:39 election-out time: 511
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 462
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 539
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 478
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 524
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 561
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 545
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 587
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 506
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 545
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 516
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 578
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 508
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 597
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 547
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 487
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 538
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 540
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 465
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 541
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 558
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 587
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 581
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 579
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 506
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 537
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 481
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 585
+2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
+2017/09/20 21:18:39 election-out time: 576
+Test （2A): first leader is: 2
 Test （2A): disconnect leader1
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 can't recieve from server1,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 can't recieve from server2,current term is 3
-Leader0 send heartbeat,current term is 3
-Follower1 find time out and become candidate1,current term is 3
-candidate1 send requestvote rpc to server2,current term is 4
-Follower2 find time out and become candidate2,current term is 3
-candidate2 send requestvote rpc to server1,current term is 4
-server1 recieve vote from server2, is true,currresultent term is 4
-candidate1 send requestvote rpc to server0,current term is 4
-server2 recieve vote from server1, is true,currresultent term is 4
-candidate2 send requestvote rpc to server0,current term is 4
-leader0 send appendentry rpc to followers,current term is 3
-server1 can't recieve from server0,current term is 4
-server2 can't recieve from server0,current term is 4
-Leader0 can't recieve from server1,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 can't recieve from server2,current term is 3
-Leader0 send heartbeat,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Become candidate1,current term is 4
-Become candidate2,current term is 4
-candidate1 send requestvote rpc to server0,current term is 5
-candidate2 send requestvote rpc to server1,current term is 5
-candidate2 send requestvote rpc to server0,current term is 5
-candidate1 send requestvote rpc to server2,current term is 5
-server1 recieve vote from server2, is true,currresultent term is 5
-server2 recieve vote from server1, is true,currresultent term is 5
-Leader0 can't recieve from server1,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-server1 can't recieve from server0,current term is 5
-server2 can't recieve from server0,current term is 5
-Leader0 can't recieve from server2,current term is 3
-Leader0 send heartbeat,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Become candidate1,current term is 5
-Become candidate2,current term is 5
-Leader0 can't recieve from server1,current term is 3
-candidate1 send requestvote rpc to server0,current term is 6
-leader0 send appendentry rpc to followers,current term is 3
-candidate2 send requestvote rpc to server0,current term is 6
-candidate2 send requestvote rpc to server1,current term is 6
-candidate1 send requestvote rpc to server2,current term is 6
-server2 recieve vote from server1, is true,currresultent term is 6
-server1 recieve vote from server2, is true,currresultent term is 6
-server1 can't recieve from server0,current term is 6
-Leader0 can't recieve from server2,current term is 3
-Leader0 send heartbeat,current term is 3
-server2 can't recieve from server0,current term is 6
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 can't recieve from server1,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Become candidate2,current term is 6
-Become candidate1,current term is 6
-candidate1 send requestvote rpc to server0,current term is 7
-candidate2 send requestvote rpc to server1,current term is 7
-candidate2 send requestvote rpc to server0,current term is 7
-server2 recieve vote from server1, is true,currresultent term is 7
-candidate1 send requestvote rpc to server2,current term is 7
-server1 recieve vote from server2, is true,currresultent term is 7
-Leader0 can't recieve from server2,current term is 3
-Leader0 send heartbeat,current term is 3
-server2 can't recieve from server0,current term is 7
-server1 can't recieve from server0,current term is 7
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 can't recieve from server1,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 can't recieve from server2,current term is 3
-Leader0 send heartbeat,current term is 3
-Become candidate2,current term is 7
-candidate2 send requestvote rpc to server0,current term is 8
-candidate2 send requestvote rpc to server1,current term is 8
-Become candidate1,current term is 7
-candidate1 send requestvote rpc to server0,current term is 8
-candidate1 send requestvote rpc to server2,current term is 8
-server1 recieve vote from server2, is true,currresultent term is 8
-server2 recieve vote from server1, is true,currresultent term is 8
-leader0 send appendentry rpc to followers,current term is 3
-server2 can't recieve from server0,current term is 8
-server1 can't recieve from server0,current term is 8
-Leader0 can't recieve from server1,current term is 3
-leader0 send appendentry rpc to followers,current term is 3
-Leader0 can't recieve from server2,current term is 3
-Leader0 send heartbeat,current term is 3
-Become candidate2,current term is 8
-candidate2 send requestvote rpc to server1,current term is 9
-candidate2 send requestvote rpc to server0,current term is 9
-Become candidate1,current term is 8
-candidate1 send requestvote rpc to server2,current term is 9
-candidate1 send requestvote rpc to server0,current term is 9
-server2 recieve vote from server1, is true,currresultent term is 9
-server1 recieve vote from server2, is true,currresultent term is 9
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:39 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:39 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:39 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:39 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Follower0 find time out and become candidate0,current term is 1
+2017/09/20 21:18:40 election-out time: 577
+2017/09/20 21:18:40 candidate0 send requestvote rpc to server2,current term is 2
+2017/09/20 21:18:40 candidate0 send requestvote rpc to server1,current term is 2
+2017/09/20 21:18:40 server0 recieve vote from server1, is true,current result term is 2
+2017/09/20 21:18:40 Become candidate0,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Follower1 has votefor candidate0,current term is 2
+2017/09/20 21:18:40 election-out time: 470
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 573
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 491
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 recieve vote from server1,result is false,current term is 1
+2017/09/20 21:18:40 server0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 491
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 586
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 552
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 525
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 587
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 540
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 541
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 471
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 531
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 593
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 531
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 537
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 534
+Test (2A): check new leader after first disconnect
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
+2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader2 recieve vote from server0,result is true,current term is 1
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 453
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader2 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 2
+2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 election-out time: 474
+2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 497
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 562
+2017/09/20 21:18:40 election-out time: 532
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 566
+2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 539
+2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 590
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 536
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 551
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 476
+2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 490
+2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:40 election-out time: 451
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 544
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 514
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 455
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 583
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 501
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 540
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 502
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 458
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 517
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 531
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 478
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 504
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 522
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 573
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 492
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 558
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 543
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 568
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 516
+2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
+2017/09/20 21:18:41 election-out time: 510
+Test （2A): older Leader Rejoin,second leader is: 0
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Follower1 find time out and become candidate1,current term is 2
+2017/09/20 21:18:41 election-out time: 536
+2017/09/20 21:18:41 candidate1 send requestvote rpc to server2,current term is 3
+2017/09/20 21:18:41 candidate1 send requestvote rpc to server0,current term is 3
+2017/09/20 21:18:41 Follower2 find time out and become candidate2,current term is 2
+2017/09/20 21:18:41 election-out time: 462
+2017/09/20 21:18:41 candidate2 send requestvote rpc to server1,current term is 3
+2017/09/20 21:18:41 candidate2 send requestvote rpc to server0,current term is 3
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 server1 can't recieve from server2,current term is 3
+2017/09/20 21:18:41 server1 can't recieve from server0,current term is 3
+2017/09/20 21:18:41 server2 can't recieve from server1,current term is 3
+2017/09/20 21:18:41 server2 can't recieve from server0,current term is 3
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Become candidate2,current term is 3
+2017/09/20 21:18:42 election-out time: 531
+2017/09/20 21:18:42 candidate2 send requestvote rpc to server1,current term is 4
+2017/09/20 21:18:42 candidate2 send requestvote rpc to server0,current term is 4
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 server2 can't recieve from server1,current term is 4
+2017/09/20 21:18:42 server2 can't recieve from server0,current term is 4
+2017/09/20 21:18:42 Become candidate1,current term is 3
+2017/09/20 21:18:42 election-out time: 561
+2017/09/20 21:18:42 candidate1 send requestvote rpc to server2,current term is 4
+2017/09/20 21:18:42 candidate1 send requestvote rpc to server0,current term is 4
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 server1 can't recieve from server2,current term is 4
+2017/09/20 21:18:42 server1 can't recieve from server0,current term is 4
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Become candidate2,current term is 4
+2017/09/20 21:18:42 election-out time: 522
+2017/09/20 21:18:42 candidate2 send requestvote rpc to server1,current term is 5
+2017/09/20 21:18:42 candidate2 send requestvote rpc to server0,current term is 5
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 recieve vote from server2,result is false,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 server2 can't recieve from server1,current term is 5
+2017/09/20 21:18:42 server2 can't recieve from server0,current term is 5
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Become candidate1,current term is 4
+2017/09/20 21:18:42 election-out time: 531
+2017/09/20 21:18:42 candidate1 send requestvote rpc to server2,current term is 5
+2017/09/20 21:18:42 candidate1 send requestvote rpc to server0,current term is 5
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 server1 can't recieve from server2,current term is 5
+2017/09/20 21:18:42 server1 can't recieve from server0,current term is 5
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+Test （2A): there is no leader 
+Test （2A): server rejoin: 1
+2017/09/20 21:18:43 Become candidate2,current term is 5
+2017/09/20 21:18:43 election-out time: 481
+2017/09/20 21:18:43 candidate2 send requestvote rpc to server1,current term is 6
+2017/09/20 21:18:43 candidate2 send requestvote rpc to server0,current term is 6
+2017/09/20 21:18:43 server2 recieve vote from server1, is true,current result term is 6
+2017/09/20 21:18:43 Become candidate2,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Become candidate1,current term is 6
+2017/09/20 21:18:43 election-out time: 478
+2017/09/20 21:18:43 Follower1 has votefor candidate2,current term is 6
+2017/09/20 21:18:43 election-out time: 516
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 486
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 server2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 589
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 recieve vote from server1,result is false,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 559
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 502
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 553
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 555
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 456
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 527
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 543
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 515
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 573
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 553
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 548
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 506
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 477
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 583
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
+2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
+2017/09/20 21:18:43 Leader0 recieve vote from server2,result is true,current term is 2
+2017/09/20 21:18:43 Leader0 recieve vote from server1,result is true,current term is 2
+2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 580
+2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 6
+2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 6
+2017/09/20 21:18:43 election-out time: 586
+2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 587
+2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 512
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 454
+2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 571
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 543
+2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 498
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 556
+2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 465
+2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 522
+2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 495
+2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 594
+2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:43 election-out time: 456
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 549
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 524
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 570
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 544
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 509
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 457
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 574
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 507
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 503
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 524
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 575
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 540
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 539
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 464
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 495
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 489
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 581
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 481
+2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
+2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
+2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
+2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 451
+2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
+2017/09/20 21:18:44 election-out time: 535
+  ... Passed
+PASS
+ok  	MIT-6.824-2017/src/raft	5.511s
