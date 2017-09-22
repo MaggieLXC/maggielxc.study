@@ -1,1332 +1,243 @@
-Test (2A): election after network failure ...
-2017/09/20 21:18:38 election-out time: 581
-2017/09/20 21:18:38 election-out time: 537
-2017/09/20 21:18:38 election-out time: 497
-2017/09/20 21:18:39 Follower2 find time out and become candidate2,current term is 0
-2017/09/20 21:18:39 candidate2 send requestvote rpc to server1,current term is 1
-2017/09/20 21:18:39 election-out time: 509
-2017/09/20 21:18:39 candidate2 send requestvote rpc to server0,current term is 1
-2017/09/20 21:18:39 server2 recieve vote from server1, is true,current result term is 1
-2017/09/20 21:18:39 Become candidate2,current term is 1
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Follower1 has votefor candidate2,current term is 1
-2017/09/20 21:18:39 election-out time: 481
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 468
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 server2 recieve vote from server0, is true,current result term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower0 has votefor candidate2,current term is 1
-2017/09/20 21:18:39 election-out time: 475
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 590
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 556
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 450
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 494
-2017/09/20 21:18:39 election-out time: 511
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 462
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 539
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 478
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 524
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 561
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 545
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 587
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 506
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 545
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 516
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 578
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 508
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 597
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 547
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 487
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 538
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 540
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 465
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 541
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 558
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 587
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 581
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 579
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 506
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 537
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 481
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server1,result is true,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:39 Follower1 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 585
-2017/09/20 21:18:39 Follower0 has got heartbeat,current term is 1
-2017/09/20 21:18:39 election-out time: 576
-Test （2A): first leader is: 2
-Test （2A): disconnect leader1
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:39 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:39 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:39 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:39 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:39 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:39 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Follower0 find time out and become candidate0,current term is 1
-2017/09/20 21:18:40 election-out time: 577
-2017/09/20 21:18:40 candidate0 send requestvote rpc to server2,current term is 2
-2017/09/20 21:18:40 candidate0 send requestvote rpc to server1,current term is 2
-2017/09/20 21:18:40 server0 recieve vote from server1, is true,current result term is 2
-2017/09/20 21:18:40 Become candidate0,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Follower1 has votefor candidate0,current term is 2
-2017/09/20 21:18:40 election-out time: 470
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 573
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 491
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 recieve vote from server1,result is false,current term is 1
-2017/09/20 21:18:40 server0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 491
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 586
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 552
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 525
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 587
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 540
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 541
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 471
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 531
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 593
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 531
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 537
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 534
-Test (2A): check new leader after first disconnect
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 1
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 1
-2017/09/20 21:18:40 Leader2 send heartbeat,current term is 1
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader2 send appendentry rpc to followers,current term is 1
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader2 recieve vote from server0,result is true,current term is 1
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 453
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader2 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server1,current term is 2
-2017/09/20 21:18:40 Leader2 can't recieve from server0,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 election-out time: 474
-2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 497
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 562
-2017/09/20 21:18:40 election-out time: 532
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 566
-2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 539
-2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 590
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 536
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 551
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 476
-2017/09/20 21:18:40 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:40 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:40 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:40 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 490
-2017/09/20 21:18:40 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:40 election-out time: 451
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 544
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 514
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 455
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 583
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 501
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 540
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 502
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 458
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 517
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 531
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 478
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 504
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 522
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 573
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 492
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 558
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 543
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 568
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:41 Follower2 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 516
-2017/09/20 21:18:41 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:41 Follower1 has got heartbeat,current term is 2
-2017/09/20 21:18:41 election-out time: 510
-Test （2A): older Leader Rejoin,second leader is: 0
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Follower1 find time out and become candidate1,current term is 2
-2017/09/20 21:18:41 election-out time: 536
-2017/09/20 21:18:41 candidate1 send requestvote rpc to server2,current term is 3
-2017/09/20 21:18:41 candidate1 send requestvote rpc to server0,current term is 3
-2017/09/20 21:18:41 Follower2 find time out and become candidate2,current term is 2
-2017/09/20 21:18:41 election-out time: 462
-2017/09/20 21:18:41 candidate2 send requestvote rpc to server1,current term is 3
-2017/09/20 21:18:41 candidate2 send requestvote rpc to server0,current term is 3
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 server1 can't recieve from server2,current term is 3
-2017/09/20 21:18:41 server1 can't recieve from server0,current term is 3
-2017/09/20 21:18:41 server2 can't recieve from server1,current term is 3
-2017/09/20 21:18:41 server2 can't recieve from server0,current term is 3
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:41 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:41 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:41 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Become candidate2,current term is 3
-2017/09/20 21:18:42 election-out time: 531
-2017/09/20 21:18:42 candidate2 send requestvote rpc to server1,current term is 4
-2017/09/20 21:18:42 candidate2 send requestvote rpc to server0,current term is 4
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 server2 can't recieve from server1,current term is 4
-2017/09/20 21:18:42 server2 can't recieve from server0,current term is 4
-2017/09/20 21:18:42 Become candidate1,current term is 3
-2017/09/20 21:18:42 election-out time: 561
-2017/09/20 21:18:42 candidate1 send requestvote rpc to server2,current term is 4
-2017/09/20 21:18:42 candidate1 send requestvote rpc to server0,current term is 4
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 server1 can't recieve from server2,current term is 4
-2017/09/20 21:18:42 server1 can't recieve from server0,current term is 4
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Become candidate2,current term is 4
-2017/09/20 21:18:42 election-out time: 522
-2017/09/20 21:18:42 candidate2 send requestvote rpc to server1,current term is 5
-2017/09/20 21:18:42 candidate2 send requestvote rpc to server0,current term is 5
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 recieve vote from server2,result is false,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 server2 can't recieve from server1,current term is 5
-2017/09/20 21:18:42 server2 can't recieve from server0,current term is 5
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Become candidate1,current term is 4
-2017/09/20 21:18:42 election-out time: 531
-2017/09/20 21:18:42 candidate1 send requestvote rpc to server2,current term is 5
-2017/09/20 21:18:42 candidate1 send requestvote rpc to server0,current term is 5
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 server1 can't recieve from server2,current term is 5
-2017/09/20 21:18:42 server1 can't recieve from server0,current term is 5
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:42 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:42 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-Test （2A): there is no leader 
-Test （2A): server rejoin: 1
-2017/09/20 21:18:43 Become candidate2,current term is 5
-2017/09/20 21:18:43 election-out time: 481
-2017/09/20 21:18:43 candidate2 send requestvote rpc to server1,current term is 6
-2017/09/20 21:18:43 candidate2 send requestvote rpc to server0,current term is 6
-2017/09/20 21:18:43 server2 recieve vote from server1, is true,current result term is 6
-2017/09/20 21:18:43 Become candidate2,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Become candidate1,current term is 6
-2017/09/20 21:18:43 election-out time: 478
-2017/09/20 21:18:43 Follower1 has votefor candidate2,current term is 6
-2017/09/20 21:18:43 election-out time: 516
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 486
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 server2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 589
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 recieve vote from server1,result is false,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 559
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 502
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 553
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 555
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 456
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 527
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 543
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 515
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 573
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 553
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 548
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 506
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 477
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 583
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 2
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 2
-2017/09/20 21:18:43 Leader0 send heartbeat,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 leader0 send appendentry rpc to followers,current term is 2
-2017/09/20 21:18:43 Leader0 recieve vote from server2,result is true,current term is 2
-2017/09/20 21:18:43 Leader0 recieve vote from server1,result is true,current term is 2
-2017/09/20 21:18:43 Leader2 can't recieve from server0,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 580
-2017/09/20 21:18:43 Leader0 can't recieve from server2,current term is 6
-2017/09/20 21:18:43 Leader0 can't recieve from server1,current term is 6
-2017/09/20 21:18:43 election-out time: 586
-2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 587
-2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 512
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 454
-2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 571
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 543
-2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 498
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 556
-2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 465
-2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 522
-2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 495
-2017/09/20 21:18:43 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:43 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:43 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:43 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 594
-2017/09/20 21:18:43 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:43 election-out time: 456
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 549
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 524
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 570
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 544
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 509
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 457
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 574
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 507
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 503
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 524
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 575
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 540
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 539
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 464
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 495
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 489
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 581
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 481
-2017/09/20 21:18:44 Leader2 send heartbeat,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server1,result is true,current term is 6
-2017/09/20 21:18:44 leader2 send appendentry rpc to followers,current term is 6
-2017/09/20 21:18:44 Leader2 recieve vote from server0,result is true,current term is 6
-2017/09/20 21:18:44 Follower1 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 451
-2017/09/20 21:18:44 Follower0 has got heartbeat,current term is 6
-2017/09/20 21:18:44 election-out time: 535
-  ... Passed
-PASS
-ok  	MIT-6.824-2017/src/raft	5.511s
+Test (2B): rejoin of partitioned leader ...
+22:11:51.629750 leader1 logs:[{<nil> 0}]
+22:11:51.629789 leader2 logs:[{<nil> 0}]
+22:11:51.629792 leader0 logs:[{<nil> 0}]
+22:11:51.680135 leader1 logs:[{<nil> 0}]
+22:11:51.680155 leader2 logs:[{<nil> 0}]
+22:11:51.680158 leader0 logs:[{<nil> 0}]
+22:11:51.731116 leader1 logs:[{<nil> 0}]
+22:11:51.731129 leader2 logs:[{<nil> 0}]
+22:11:51.731131 leader0 logs:[{<nil> 0}]
+22:11:51.782271 leader1 logs:[{<nil> 0}]
+22:11:51.782295 leader2 logs:[{<nil> 0}]
+22:11:51.782298 leader0 logs:[{<nil> 0}]
+22:11:51.833554 leader1 logs:[{<nil> 0}]
+22:11:51.833566 leader2 logs:[{<nil> 0}]
+22:11:51.833569 leader0 logs:[{<nil> 0}]
+22:11:51.884186 leader1 logs:[{<nil> 0}]
+22:11:51.884200 leader2 logs:[{<nil> 0}]
+22:11:51.884202 leader0 logs:[{<nil> 0}]
+22:11:51.935284 leader1 logs:[{<nil> 0}]
+22:11:51.935297 leader2 logs:[{<nil> 0}]
+22:11:51.935299 leader0 logs:[{<nil> 0}]
+22:11:51.986251 leader1 logs:[{<nil> 0}]
+22:11:51.986265 leader2 logs:[{<nil> 0}]
+22:11:51.986267 leader0 logs:[{<nil> 0}]
+22:11:52.037171 leader1 logs:[{<nil> 0}]
+22:11:52.037184 leader2 logs:[{<nil> 0}]
+22:11:52.037186 leader0 logs:[{<nil> 0}]
+22:11:52.088199 leader1 logs:[{<nil> 0}]
+22:11:52.088211 leader2 logs:[{<nil> 0}]
+22:11:52.088213 leader0 logs:[{<nil> 0}]
+22:11:52.127142 server1 become candidate, and increase the term, 1,log is: [{<nil> 0}]
+22:11:52.127427 server2 begin RequestVote, it's logentry is :[{<nil> 0}], and term is0, commitIndex is:0
+22:11:52.127432 voter2's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
+22:11:52.127434 server2 agree cadidate1,and update it's term to 1
+22:11:52.127506 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+22:11:52.127599 server0 begin RequestVote, it's logentry is :[{<nil> 0}], and term is0, commitIndex is:0
+22:11:52.127602 voter0's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
+22:11:52.127604 server0 agree cadidate1,and update it's term to 1
+22:11:52.127984 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+22:11:52.127999 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+22:11:52.128087 server0 reply true to leader1,logentry is []
+22:11:52.128103 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+22:11:52.128250 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+22:11:52.128262 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+22:11:52.128394 server2 reply true to leader1,logentry is []
+22:11:52.128407 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+22:11:52.139185 [35mLeader1 is write data,matchindex change to: [0 1 0][0m
+22:11:52.139322 leader1 logs:[{<nil> 0} {101 1}]
+22:11:52.219120 leader1's indice: [0 0 1] and tmpcommitIndex: 0, leadercommit: 0
+22:11:52.219418 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+22:11:52.219459 Append entries: leader1's infomation: entries:[{101 1}], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+22:11:52.219536 server2 reply true to leader1,logentry is [{101 1}]
+22:11:52.219561 leader1 update server2's nextIndex: [1 1 2] and matchIndex: [0 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.219794 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+22:11:52.219810 Append entries: leader1's infomation: entries:[{101 1}], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+22:11:52.220158 server0 reply true to leader1,logentry is [{101 1}]
+22:11:52.220163 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.311179 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 0
+22:11:52.311220 Leader1  doCommitChcek, and change it's commitIndex: 1
+22:11:52.311566 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:0, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.311585 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:1, PreLogterm:1
+22:11:52.311741 server0 reply true to leader1,logentry is []
+22:11:52.311762 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.312562 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:0, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.312576 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:1, PreLogterm:1
+22:11:52.312923 server2 reply true to leader1,logentry is []
+22:11:52.312952 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.403196 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
+22:11:52.403488 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:0, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.403493 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.403489 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:0, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.403514 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.403547 server0 reply true to leader1,logentry is []
+22:11:52.403551 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.403598 server2 reply true to leader1,logentry is []
+22:11:52.403603 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.409130 *******************************************************************cfg.one(101, servers) success
+22:11:52.495136 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
+22:11:52.495412 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.495425 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.495504 server2 reply true to leader1,logentry is []
+22:11:52.495517 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.495633 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.495676 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.495841 server0 reply true to leader1,logentry is []
+22:11:52.495854 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.587181 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
+22:11:52.587337 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.587342 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.587475 server0 reply true to leader1,logentry is []
+22:11:52.587480 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.587622 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.587636 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.587736 server2 reply true to leader1,logentry is []
+22:11:52.587754 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.679444 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.679455 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.679450 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.679492 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.679453 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
+22:11:52.679536 server0 reply true to leader1,logentry is []
+22:11:52.679539 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.679574 server2 reply true to leader1,logentry is []
+22:11:52.679578 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.771166 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
+22:11:52.771457 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.771470 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.771620 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.771632 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.771728 server2 reply true to leader1,logentry is []
+22:11:52.771741 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.771803 server0 reply true to leader1,logentry is []
+22:11:52.771816 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.863230 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
+22:11:52.863487 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.863501 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.863630 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:52.863643 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:52.863729 server2 reply true to leader1,logentry is []
+22:11:52.863742 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.863796 server0 reply true to leader1,logentry is []
+22:11:52.863827 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
+22:11:52.910266 ******************************************************************leader1 network failure
+22:11:52.910297 [35mLeader1 is write data,matchindex change to: [1 2 1][0m
+22:11:52.910302 leader1 logs:[{<nil> 0} {101 1} {102 1}]
+22:11:52.910312 [35mLeader1 is write data,matchindex change to: [1 3 1][0m
+22:11:52.910314 leader1 logs:[{<nil> 0} {101 1} {102 1} {103 1}]
+22:11:52.910317 [35mLeader1 is write data,matchindex change to: [1 4 1][0m
+22:11:52.910320 leader1 logs:[{<nil> 0} {101 1} {102 1} {103 1} {104 1}]
+22:11:52.910321 *******************************************************************make old leader1 try to agree on some entries
+22:11:52.910323 leader2 logs:[{<nil> 0} {101 1}]
+22:11:52.910326 leader0 logs:[{<nil> 0} {101 1}]
+22:11:52.955203 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:52.961064 leader2 logs:[{<nil> 0} {101 1}]
+22:11:52.961070 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.012066 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.012077 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.047251 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.063061 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.063086 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.114017 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.114049 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.139210 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.165157 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.165172 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.215992 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.216005 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.231058 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.267236 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.267267 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.318083 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.318096 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.323121 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.369165 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.369178 leader0 logs:[{<nil> 0} {101 1}]
+22:11:53.372183 server0 become candidate, and increase the term, 2,log is: [{<nil> 0} {101 1}]
+22:11:53.372544 server2 begin RequestVote, it's logentry is :[{<nil> 0} {101 1}], and term is1, commitIndex is:1
+22:11:53.372567 voter2's getLastLogTerm:1 getLastLogTerm:1 commitIndex:1, votedFor:-1, cadidate0's LastLogTerm: 1, getLastLogIndex: 1, 
+22:11:53.372596 server2 agree cadidate0,and update it's term to 2
+22:11:53.372694 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 1
+22:11:53.372871 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:53.372875 Append entries: leader0's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:53.373003 server2 reply true to leader0,logentry is []
+22:11:53.373010 leader0 update server2's nextIndex: [2 2 2] and matchIndex: [0 0 1] to nextIndex: 2, matchIndex: 1
+22:11:53.415231 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.420057 leader2 logs:[{<nil> 0} {101 1}]
+22:11:53.420071 [35mLeader0 is write data,matchindex change to: [2 0 1][0m
+22:11:53.420074 leader0 logs:[{<nil> 0} {101 1} {103 2}]
+22:11:53.464117 leader0's indice: [0 1 2] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.464484 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
+22:11:53.464500 Append entries: leader0's infomation: entries:[{103 2}], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
+22:11:53.464586 server2 reply true to leader0,logentry is [{103 2}]
+22:11:53.464599 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
+22:11:53.507242 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.556128 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 1
+22:11:53.556139 Leader0  doCommitChcek, and change it's commitIndex: 2
+22:11:53.556329 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:1, getLastLogIndex:2 getLastLogTerm:2
+22:11:53.556331 Append entries: leader0's infomation: entries:[], LeaderCommit:1, PrelogIndex:2, PreLogterm:2
+22:11:53.556394 server2 reply true to leader0,logentry is []
+22:11:53.556399 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
+22:11:53.598256 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.648485 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:53.649227 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:1, getLastLogIndex:2 getLastLogTerm:2
+22:11:53.649235 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
+22:11:53.649342 server2 reply true to leader0,logentry is []
+22:11:53.649346 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
+22:11:53.649766 ********************************************************************new leader commits, also for index=2,sucess
+22:11:53.690161 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.739112 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:53.739335 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
+22:11:53.739340 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
+22:11:53.739384 server2 reply true to leader0,logentry is []
+22:11:53.739391 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
+22:11:53.782217 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.830219 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:53.830448 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
+22:11:53.830453 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
+22:11:53.830544 server2 reply true to leader0,logentry is []
+22:11:53.830549 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
+22:11:53.874134 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:53.921184 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:53.921670 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
+22:11:53.921674 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
+22:11:53.921745 server2 reply true to leader0,logentry is []
+22:11:53.921765 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
+22:11:53.966159 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:54.013090 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:54.013610 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
+22:11:54.013630 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
+22:11:54.013690 server2 reply true to leader0,logentry is []
+22:11:54.013711 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
+22:11:54.058139 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:54.104162 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:54.104563 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
+22:11:54.104566 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
+22:11:54.104695 server2 reply true to leader0,logentry is []
+22:11:54.104699 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
+22:11:54.149171 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
+22:11:54.150009 *********************************************************************new leader0 network failure
+22:11:54.150016 **********************************************************************old leader1 connected again
+22:11:54.150023 [35mLeader1 is write data,matchindex change to: [1 5 1][0m
+22:11:54.150028 leader1 logs:[{<nil> 0} {101 1} {102 1} {103 1} {104 1} {104 1}]
+22:11:54.195171 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:54.241115 leader1's indice: [1 1 5] and tmpcommitIndex: 1, leadercommit: 1
+22:11:54.241423 server2 reply false to leader1,logentry is [{102 1} {103 1} {104 1} {104 1}]
+22:11:54.286165 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:54.378112 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:54.470189 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:54.512123 server1 reply false to leader0,logentry is [{103 2}]
+22:11:54.561126 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
+22:11:54.568123 server2 become candidate, and increase the term, 3,log is: [{<nil> 0} {101 1} {103 2}]
+22:11:54.568257 server1 begin RequestVote, it's logentry is :[{<nil> 0} {101 1} {102 1} {103 1} {104 1} {104 1}], and term is2, commitIndex is:1
+22:11:54.568261 voter1's getLastLogTerm:1 getLastLogTerm:5 commitIndex:1, votedFor:-1, cadidate2's LastLogTerm: 2, getLastLogIndex: 2, 
+22:11:54.568262 server1 agree cadidate2,and update it's term to 3
+22:11:54.568332 leader2's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 2
+22:11:54.568488 Append entries: follower1's infomation: logs:[{<nil> 0} {101 1} {102 1} {103 1} {104 1} {104 1}], commitIndex:1, getLastLogIndex:5 getLastLogTerm:1
+22:11:54.568491 Append entries: leader2's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
+22:11:54.568533 server1 reply true to leader2,logentry is []
+22:11:54.568536 leader2 update server1's nextIndex: [3 3 3] and matchIndex: [0 2 0] to nextIndex: 3, matchIndex: 2
+22:11:54.568542 apply error: commit index=2 server=1 102 != server=2 103
+exit status 1
+FAIL	MIT-6.824-2017/src/raft	2.946s

@@ -8,12 +8,15 @@ package raft
 // test with the original before submitting.
 //
 
-import "testing"
-import "fmt"
-import "time"
-import "math/rand"
-import "sync/atomic"
-import "sync"
+import (
+	"fmt"
+	"log"
+	"math/rand"
+	"sync"
+	"sync/atomic"
+	"testing"
+	"time"
+)
 
 // The tester generously allows solutions to complete elections in one second
 // (much more than the paper's range of timeouts).
@@ -82,6 +85,7 @@ func TestReElection2A(t *testing.T) {
 	fmt.Printf("  ... Passed\n")
 }
 
+//pass
 func TestBasicAgree2B(t *testing.T) {
 	servers := 5
 	cfg := make_config(t, servers, false)
@@ -91,12 +95,12 @@ func TestBasicAgree2B(t *testing.T) {
 
 	iters := 3
 	for index := 1; index < iters+1; index++ {
-		nd, _ := cfg.nCommitted(index)
+		nd, _ := cfg.nCommitted(index) //获得本次提交中新日志节的节点数，此时客户短未发出日志请求，节点数为0
 		if nd > 0 {
 			t.Fatalf("some have committed before Start()")
 		}
 
-		xindex := cfg.one(index*100, servers)
+		xindex := cfg.one(index*100, servers) //检查一致性
 		if xindex != index {
 			t.Fatalf("got index %v but expected %v", xindex, index)
 		}
@@ -105,6 +109,7 @@ func TestBasicAgree2B(t *testing.T) {
 	fmt.Printf("  ... Passed\n")
 }
 
+//pass
 func TestFailAgree2B(t *testing.T) {
 	servers := 3
 	cfg := make_config(t, servers, false)
@@ -113,10 +118,13 @@ func TestFailAgree2B(t *testing.T) {
 	fmt.Printf("Test (2B): agreement despite follower failure ...\n")
 
 	cfg.one(101, servers)
+	log.Printf("*******************************success at cfg.one(101, servers")
 
 	// follower network failure
 	leader := cfg.checkOneLeader()
+	log.Printf("*******************************success at cfg.checkOneLeader(),the leader is normal")
 	cfg.disconnect((leader + 1) % servers)
+	log.Printf("*******************************disconnect(%v)", (leader+1)%servers)
 
 	// agree despite one failed server?
 	cfg.one(102, servers-1)
@@ -124,15 +132,19 @@ func TestFailAgree2B(t *testing.T) {
 	time.Sleep(RaftElectionTimeout)
 	cfg.one(104, servers-1)
 	cfg.one(105, servers-1)
+	log.Printf("*******************************success at cfg.one(104,105, servers)")
 
 	// failed server re-connected
+	log.Printf("*******************************reconnect(%v)", (leader+1)%servers)
 	cfg.connect((leader + 1) % servers)
 
 	// agree with full set of servers?
 	cfg.one(106, servers)
+
 	time.Sleep(RaftElectionTimeout)
 	cfg.one(107, servers)
 
+	log.Printf("*******************************success at cfg.one(106, servers)")
 	fmt.Printf("  ... Passed\n")
 }
 
@@ -144,12 +156,14 @@ func TestFailNoAgree2B(t *testing.T) {
 	fmt.Printf("Test (2B): no agreement if too many followers fail ...\n")
 
 	cfg.one(10, servers)
+	log.Printf("*************************cfg.one(10, servers) check success")
 
 	// 3 of 5 followers disconnect
 	leader := cfg.checkOneLeader()
 	cfg.disconnect((leader + 1) % servers)
 	cfg.disconnect((leader + 2) % servers)
 	cfg.disconnect((leader + 3) % servers)
+	log.Printf("*************************disconnect 3 of 5: %v %v %v,leader is %v", (leader+1)%servers, (leader+2)%servers, (leader+3)%servers, leader)
 
 	index, _, ok := cfg.rafts[leader].Start(20)
 	if ok != true {
@@ -165,11 +179,12 @@ func TestFailNoAgree2B(t *testing.T) {
 	if n > 0 {
 		t.Fatalf("%v committed but no majority", n)
 	}
-
+	log.Printf("*************************disconnect 3 of 5 success")
 	// repair failures
 	cfg.connect((leader + 1) % servers)
 	cfg.connect((leader + 2) % servers)
 	cfg.connect((leader + 3) % servers)
+	log.Printf("*************************repair failures")
 
 	// the disconnected majority may have chosen a leader from
 	// among their own ranks, forgetting index 2.
@@ -188,6 +203,7 @@ func TestFailNoAgree2B(t *testing.T) {
 	fmt.Printf("  ... Passed\n")
 }
 
+//pass
 func TestConcurrentStarts2B(t *testing.T) {
 	servers := 3
 	cfg := make_config(t, servers, false)
@@ -297,30 +313,37 @@ func TestRejoin2B(t *testing.T) {
 	fmt.Printf("Test (2B): rejoin of partitioned leader ...\n")
 
 	cfg.one(101, servers)
+	log.Printf("*******************************************************************cfg.one(101, servers) success")
 
 	// leader network failure
 	leader1 := cfg.checkOneLeader()
 	cfg.disconnect(leader1)
+	log.Printf("******************************************************************leader%v network failure", leader1)
 
 	// make old leader try to agree on some entries
 	cfg.rafts[leader1].Start(102)
 	cfg.rafts[leader1].Start(103)
 	cfg.rafts[leader1].Start(104)
+	log.Printf("*******************************************************************make old leader%v try to agree on some entries", leader1)
 
 	// new leader commits, also for index=2
 	cfg.one(103, 2)
+	log.Printf("********************************************************************new leader commits, also for index=2,sucess")
 
 	// new leader network failure
 	leader2 := cfg.checkOneLeader()
 	cfg.disconnect(leader2)
+	log.Printf("*********************************************************************new leader%v network failure", leader2)
 
 	// old leader connected again
 	cfg.connect(leader1)
-
+	log.Printf("**********************************************************************old leader%v connected again", leader1)
 	cfg.one(104, 2)
+	log.Printf("*******************************************************************************success")
 
 	// all together now
 	cfg.connect(leader2)
+	log.Printf("**********************************************************************************all together now")
 
 	cfg.one(105, servers)
 
@@ -399,6 +422,7 @@ func TestBackup2B(t *testing.T) {
 	fmt.Printf("  ... Passed\n")
 }
 
+//pass
 func TestCount2B(t *testing.T) {
 	servers := 3
 	cfg := make_config(t, servers, false)
