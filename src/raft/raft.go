@@ -502,17 +502,6 @@ func (rf *Raft) AppendEntries(args AppendEntriesArgs, reply *AppendEntriesReply)
 	}
 	reply.Term = args.Term
 
-	// as heartbeat
-	if len(args.Entries) == 0 {
-		reply.Success = true
-
-		if args.LeaderCommit > rf.committedIndex {
-			rf.committedIndex = minority(args.LeaderCommit, rf.getLastLogIndex())
-		}
-		go rf.doCommit()
-		return
-	}
-
 	// there is something to handle
 	// judge if prelogindex and prelogterm 是否匹配
 	// （1）index不匹配，args log length > rf log length
@@ -520,6 +509,17 @@ func (rf *Raft) AppendEntries(args AppendEntriesArgs, reply *AppendEntriesReply)
 
 	if args.PreLogIndex > rf.getLastLogIndex() || (args.PreLogIndex != 0 && args.PreLogTerm != rf.logs[args.PreLogIndex].Term) {
 		reply.Success = false
+		return
+	}
+
+	// as heartbeat or new leader check if the last log is match
+	if len(args.Entries) == 0 {
+		reply.Success = true
+
+		if args.LeaderCommit > rf.committedIndex {
+			rf.committedIndex = minority(args.LeaderCommit, rf.getLastLogIndex())
+		}
+		go rf.doCommit()
 		return
 	}
 
@@ -550,7 +550,7 @@ func (rf *Raft) handleAppendEntriesReply(server int, args AppendEntriesArgs, rep
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 
-	log.Printf("server%v reply %v to leader%v,logentry is %v", server, reply.Success, rf.me, args.Entries)
+	log.Printf("leader%v get reply from server%v,result is:%v ,and logentry: %v", rf.me, server, reply.Success, args.Entries)
 	//only leader handle the reply
 	if rf.state != LEADER {
 		return
@@ -670,7 +670,6 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 		rf.persist()
 	}
 
-	log.Printf("leader%v logs:%v", rf.me, rf.logs)
 	return index, term, isLeader
 }
 

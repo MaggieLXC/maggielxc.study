@@ -305,6 +305,7 @@ loop:
 	fmt.Printf("  ... Passed\n")
 }
 
+//pass
 func TestRejoin2B(t *testing.T) {
 	servers := 3
 	cfg := make_config(t, servers, false)
@@ -343,13 +344,14 @@ func TestRejoin2B(t *testing.T) {
 
 	// all together now
 	cfg.connect(leader2)
-	log.Printf("**********************************************************************************all together now")
+	log.Printf("***********************************all together now")
 
 	cfg.one(105, servers)
 
 	fmt.Printf("  ... Passed\n")
 }
 
+//pass
 func TestBackup2B(t *testing.T) {
 	servers := 5
 	cfg := make_config(t, servers, false)

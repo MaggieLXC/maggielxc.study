@@ -1,243 +1,999 @@
-Test (2B): rejoin of partitioned leader ...
-22:11:51.629750 leader1 logs:[{<nil> 0}]
-22:11:51.629789 leader2 logs:[{<nil> 0}]
-22:11:51.629792 leader0 logs:[{<nil> 0}]
-22:11:51.680135 leader1 logs:[{<nil> 0}]
-22:11:51.680155 leader2 logs:[{<nil> 0}]
-22:11:51.680158 leader0 logs:[{<nil> 0}]
-22:11:51.731116 leader1 logs:[{<nil> 0}]
-22:11:51.731129 leader2 logs:[{<nil> 0}]
-22:11:51.731131 leader0 logs:[{<nil> 0}]
-22:11:51.782271 leader1 logs:[{<nil> 0}]
-22:11:51.782295 leader2 logs:[{<nil> 0}]
-22:11:51.782298 leader0 logs:[{<nil> 0}]
-22:11:51.833554 leader1 logs:[{<nil> 0}]
-22:11:51.833566 leader2 logs:[{<nil> 0}]
-22:11:51.833569 leader0 logs:[{<nil> 0}]
-22:11:51.884186 leader1 logs:[{<nil> 0}]
-22:11:51.884200 leader2 logs:[{<nil> 0}]
-22:11:51.884202 leader0 logs:[{<nil> 0}]
-22:11:51.935284 leader1 logs:[{<nil> 0}]
-22:11:51.935297 leader2 logs:[{<nil> 0}]
-22:11:51.935299 leader0 logs:[{<nil> 0}]
-22:11:51.986251 leader1 logs:[{<nil> 0}]
-22:11:51.986265 leader2 logs:[{<nil> 0}]
-22:11:51.986267 leader0 logs:[{<nil> 0}]
-22:11:52.037171 leader1 logs:[{<nil> 0}]
-22:11:52.037184 leader2 logs:[{<nil> 0}]
-22:11:52.037186 leader0 logs:[{<nil> 0}]
-22:11:52.088199 leader1 logs:[{<nil> 0}]
-22:11:52.088211 leader2 logs:[{<nil> 0}]
-22:11:52.088213 leader0 logs:[{<nil> 0}]
-22:11:52.127142 server1 become candidate, and increase the term, 1,log is: [{<nil> 0}]
-22:11:52.127427 server2 begin RequestVote, it's logentry is :[{<nil> 0}], and term is0, commitIndex is:0
-22:11:52.127432 voter2's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
-22:11:52.127434 server2 agree cadidate1,and update it's term to 1
-22:11:52.127506 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
-22:11:52.127599 server0 begin RequestVote, it's logentry is :[{<nil> 0}], and term is0, commitIndex is:0
-22:11:52.127602 voter0's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
-22:11:52.127604 server0 agree cadidate1,and update it's term to 1
-22:11:52.127984 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
-22:11:52.127999 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
-22:11:52.128087 server0 reply true to leader1,logentry is []
-22:11:52.128103 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
-22:11:52.128250 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
-22:11:52.128262 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
-22:11:52.128394 server2 reply true to leader1,logentry is []
-22:11:52.128407 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
-22:11:52.139185 [35mLeader1 is write data,matchindex change to: [0 1 0][0m
-22:11:52.139322 leader1 logs:[{<nil> 0} {101 1}]
-22:11:52.219120 leader1's indice: [0 0 1] and tmpcommitIndex: 0, leadercommit: 0
-22:11:52.219418 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
-22:11:52.219459 Append entries: leader1's infomation: entries:[{101 1}], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
-22:11:52.219536 server2 reply true to leader1,logentry is [{101 1}]
-22:11:52.219561 leader1 update server2's nextIndex: [1 1 2] and matchIndex: [0 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.219794 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
-22:11:52.219810 Append entries: leader1's infomation: entries:[{101 1}], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
-22:11:52.220158 server0 reply true to leader1,logentry is [{101 1}]
-22:11:52.220163 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.311179 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 0
-22:11:52.311220 Leader1  doCommitChcek, and change it's commitIndex: 1
-22:11:52.311566 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:0, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.311585 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:1, PreLogterm:1
-22:11:52.311741 server0 reply true to leader1,logentry is []
-22:11:52.311762 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.312562 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:0, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.312576 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:1, PreLogterm:1
-22:11:52.312923 server2 reply true to leader1,logentry is []
-22:11:52.312952 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.403196 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
-22:11:52.403488 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:0, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.403493 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.403489 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:0, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.403514 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.403547 server0 reply true to leader1,logentry is []
-22:11:52.403551 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.403598 server2 reply true to leader1,logentry is []
-22:11:52.403603 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.409130 *******************************************************************cfg.one(101, servers) success
-22:11:52.495136 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
-22:11:52.495412 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.495425 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.495504 server2 reply true to leader1,logentry is []
-22:11:52.495517 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.495633 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.495676 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.495841 server0 reply true to leader1,logentry is []
-22:11:52.495854 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.587181 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
-22:11:52.587337 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.587342 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.587475 server0 reply true to leader1,logentry is []
-22:11:52.587480 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.587622 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.587636 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.587736 server2 reply true to leader1,logentry is []
-22:11:52.587754 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.679444 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.679455 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.679450 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.679492 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.679453 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
-22:11:52.679536 server0 reply true to leader1,logentry is []
-22:11:52.679539 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.679574 server2 reply true to leader1,logentry is []
-22:11:52.679578 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.771166 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
-22:11:52.771457 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.771470 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.771620 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.771632 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.771728 server2 reply true to leader1,logentry is []
-22:11:52.771741 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.771803 server0 reply true to leader1,logentry is []
-22:11:52.771816 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.863230 leader1's indice: [1 1 1] and tmpcommitIndex: 1, leadercommit: 1
-22:11:52.863487 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.863501 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.863630 Append entries: follower0's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:52.863643 Append entries: leader1's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:52.863729 server2 reply true to leader1,logentry is []
-22:11:52.863742 leader1 update server2's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.863796 server0 reply true to leader1,logentry is []
-22:11:52.863827 leader1 update server0's nextIndex: [2 1 2] and matchIndex: [1 1 1] to nextIndex: 2, matchIndex: 1
-22:11:52.910266 ******************************************************************leader1 network failure
-22:11:52.910297 [35mLeader1 is write data,matchindex change to: [1 2 1][0m
-22:11:52.910302 leader1 logs:[{<nil> 0} {101 1} {102 1}]
-22:11:52.910312 [35mLeader1 is write data,matchindex change to: [1 3 1][0m
-22:11:52.910314 leader1 logs:[{<nil> 0} {101 1} {102 1} {103 1}]
-22:11:52.910317 [35mLeader1 is write data,matchindex change to: [1 4 1][0m
-22:11:52.910320 leader1 logs:[{<nil> 0} {101 1} {102 1} {103 1} {104 1}]
-22:11:52.910321 *******************************************************************make old leader1 try to agree on some entries
-22:11:52.910323 leader2 logs:[{<nil> 0} {101 1}]
-22:11:52.910326 leader0 logs:[{<nil> 0} {101 1}]
-22:11:52.955203 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:52.961064 leader2 logs:[{<nil> 0} {101 1}]
-22:11:52.961070 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.012066 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.012077 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.047251 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.063061 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.063086 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.114017 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.114049 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.139210 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.165157 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.165172 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.215992 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.216005 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.231058 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.267236 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.267267 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.318083 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.318096 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.323121 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.369165 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.369178 leader0 logs:[{<nil> 0} {101 1}]
-22:11:53.372183 server0 become candidate, and increase the term, 2,log is: [{<nil> 0} {101 1}]
-22:11:53.372544 server2 begin RequestVote, it's logentry is :[{<nil> 0} {101 1}], and term is1, commitIndex is:1
-22:11:53.372567 voter2's getLastLogTerm:1 getLastLogTerm:1 commitIndex:1, votedFor:-1, cadidate0's LastLogTerm: 1, getLastLogIndex: 1, 
-22:11:53.372596 server2 agree cadidate0,and update it's term to 2
-22:11:53.372694 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 1
-22:11:53.372871 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:53.372875 Append entries: leader0's infomation: entries:[], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:53.373003 server2 reply true to leader0,logentry is []
-22:11:53.373010 leader0 update server2's nextIndex: [2 2 2] and matchIndex: [0 0 1] to nextIndex: 2, matchIndex: 1
-22:11:53.415231 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.420057 leader2 logs:[{<nil> 0} {101 1}]
-22:11:53.420071 [35mLeader0 is write data,matchindex change to: [2 0 1][0m
-22:11:53.420074 leader0 logs:[{<nil> 0} {101 1} {103 2}]
-22:11:53.464117 leader0's indice: [0 1 2] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.464484 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1}], commitIndex:1, getLastLogIndex:1 getLastLogTerm:1
-22:11:53.464500 Append entries: leader0's infomation: entries:[{103 2}], LeaderCommit:1, PrelogIndex:1, PreLogterm:1
-22:11:53.464586 server2 reply true to leader0,logentry is [{103 2}]
-22:11:53.464599 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
-22:11:53.507242 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.556128 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 1
-22:11:53.556139 Leader0  doCommitChcek, and change it's commitIndex: 2
-22:11:53.556329 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:1, getLastLogIndex:2 getLastLogTerm:2
-22:11:53.556331 Append entries: leader0's infomation: entries:[], LeaderCommit:1, PrelogIndex:2, PreLogterm:2
-22:11:53.556394 server2 reply true to leader0,logentry is []
-22:11:53.556399 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
-22:11:53.598256 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.648485 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:53.649227 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:1, getLastLogIndex:2 getLastLogTerm:2
-22:11:53.649235 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
-22:11:53.649342 server2 reply true to leader0,logentry is []
-22:11:53.649346 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
-22:11:53.649766 ********************************************************************new leader commits, also for index=2,sucess
-22:11:53.690161 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.739112 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:53.739335 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
-22:11:53.739340 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
-22:11:53.739384 server2 reply true to leader0,logentry is []
-22:11:53.739391 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
-22:11:53.782217 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.830219 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:53.830448 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
-22:11:53.830453 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
-22:11:53.830544 server2 reply true to leader0,logentry is []
-22:11:53.830549 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
-22:11:53.874134 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:53.921184 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:53.921670 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
-22:11:53.921674 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
-22:11:53.921745 server2 reply true to leader0,logentry is []
-22:11:53.921765 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
-22:11:53.966159 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:54.013090 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:54.013610 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
-22:11:54.013630 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
-22:11:54.013690 server2 reply true to leader0,logentry is []
-22:11:54.013711 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
-22:11:54.058139 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:54.104162 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:54.104563 Append entries: follower2's infomation: logs:[{<nil> 0} {101 1} {103 2}], commitIndex:2, getLastLogIndex:2 getLastLogTerm:2
-22:11:54.104566 Append entries: leader0's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
-22:11:54.104695 server2 reply true to leader0,logentry is []
-22:11:54.104699 leader0 update server2's nextIndex: [2 2 3] and matchIndex: [2 0 2] to nextIndex: 3, matchIndex: 2
-22:11:54.149171 leader1's indice: [1 1 4] and tmpcommitIndex: 1, leadercommit: 1
-22:11:54.150009 *********************************************************************new leader0 network failure
-22:11:54.150016 **********************************************************************old leader1 connected again
-22:11:54.150023 [35mLeader1 is write data,matchindex change to: [1 5 1][0m
-22:11:54.150028 leader1 logs:[{<nil> 0} {101 1} {102 1} {103 1} {104 1} {104 1}]
-22:11:54.195171 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:54.241115 leader1's indice: [1 1 5] and tmpcommitIndex: 1, leadercommit: 1
-22:11:54.241423 server2 reply false to leader1,logentry is [{102 1} {103 1} {104 1} {104 1}]
-22:11:54.286165 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:54.378112 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:54.470189 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:54.512123 server1 reply false to leader0,logentry is [{103 2}]
-22:11:54.561126 leader0's indice: [0 2 2] and tmpcommitIndex: 2, leadercommit: 2
-22:11:54.568123 server2 become candidate, and increase the term, 3,log is: [{<nil> 0} {101 1} {103 2}]
-22:11:54.568257 server1 begin RequestVote, it's logentry is :[{<nil> 0} {101 1} {102 1} {103 1} {104 1} {104 1}], and term is2, commitIndex is:1
-22:11:54.568261 voter1's getLastLogTerm:1 getLastLogTerm:5 commitIndex:1, votedFor:-1, cadidate2's LastLogTerm: 2, getLastLogIndex: 2, 
-22:11:54.568262 server1 agree cadidate2,and update it's term to 3
-22:11:54.568332 leader2's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 2
-22:11:54.568488 Append entries: follower1's infomation: logs:[{<nil> 0} {101 1} {102 1} {103 1} {104 1} {104 1}], commitIndex:1, getLastLogIndex:5 getLastLogTerm:1
-22:11:54.568491 Append entries: leader2's infomation: entries:[], LeaderCommit:2, PrelogIndex:2, PreLogterm:2
-22:11:54.568533 server1 reply true to leader2,logentry is []
-22:11:54.568536 leader2 update server1's nextIndex: [3 3 3] and matchIndex: [0 2 0] to nextIndex: 3, matchIndex: 2
-22:11:54.568542 apply error: commit index=2 server=1 102 != server=2 103
-exit status 1
-FAIL	MIT-6.824-2017/src/raft	2.946s
+Test (2A): initial election ...
+16:56:51.545252 server1 become candidate, and increase the term, 1,log is: [{<nil> 0}]
+16:56:51.545672 server2 begin RequestVote, it's logentry is :[{<nil> 0}], and term is0, commitIndex is:0
+16:56:51.545687 voter2's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
+16:56:51.545690 server2 agree cadidate1,and update it's term to 1
+16:56:51.545760 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:51.545920 server0 begin RequestVote, it's logentry is :[{<nil> 0}], and term is0, commitIndex is:0
+16:56:51.545924 voter0's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
+16:56:51.545943 server0 agree cadidate1,and update it's term to 1
+16:56:51.546191 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.546205 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.546264 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:51.546278 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.546379 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.546394 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.546448 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:51.546452 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.637119 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:51.637308 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.637324 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.637378 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:51.637381 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.637486 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.637489 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.637580 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:51.637595 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.729172 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:51.729356 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.729360 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.729376 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.729392 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.729474 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:51.729479 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.729504 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:51.729509 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.821135 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:51.821428 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.821489 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.821552 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:51.821558 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.821431 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.821561 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.821604 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:51.821608 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.913138 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:51.913378 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.913391 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.913452 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:51.913456 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:51.913498 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:51.913503 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:51.913611 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:51.913625 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.005167 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.005666 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.005729 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.005893 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.005909 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.006051 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.006054 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.006102 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.006140 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.097016 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.097224 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.097243 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.097351 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.097364 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.098219 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.098264 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.098557 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.098952 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.189055 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.189328 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.189344 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.189421 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.189434 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.189550 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.189571 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.189632 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.189667 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.281141 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.281405 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.281450 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.281470 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.281474 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.281561 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.281566 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.281615 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.281633 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.373174 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.373412 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.373418 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.373646 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.373664 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.373703 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.373708 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.373762 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.373767 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.464997 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.465308 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.465323 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.465341 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.465346 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.465391 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.465395 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.465406 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.465410 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.556979 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.557259 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.557264 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.557369 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.557385 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.557259 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.557388 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.557465 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.557541 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.649137 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.649967 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.649990 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.650110 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.650114 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.650236 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.650241 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.650401 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.650447 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.741050 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.741358 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.741363 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.741419 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.741425 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.741435 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.741439 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.741487 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.741492 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.833084 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.833328 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.833333 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.833341 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.833346 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.833413 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.833418 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.833424 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.833426 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.926234 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:52.926873 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.926967 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.927085 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:52.927183 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:52.926902 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:52.927202 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:52.927294 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:52.927308 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.018195 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.018444 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.018458 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.018533 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.018538 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.018541 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.018546 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.018607 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.018612 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.110060 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.110262 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.110277 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.110345 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.110350 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.110391 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.110396 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.110449 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.110454 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.202099 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.202410 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.202415 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.202464 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.202471 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.202565 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.202568 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.202624 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.202628 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.294095 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.294380 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.294385 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.294445 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.294449 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.294551 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.294554 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.294600 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.294603 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.386077 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.386305 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.386309 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.386361 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.386364 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.386461 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.386466 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.386511 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.386515 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.478110 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.478272 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.478275 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.478380 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.478385 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.478488 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.478491 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.478533 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.478536 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+  ... Passed
+Test (2A): election after network failure ...
+16:56:53.570135 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.570412 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.570418 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.570473 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.570477 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.570573 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.570575 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.570622 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.570626 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.662621 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.662920 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.662925 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.662981 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.662984 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.663075 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.663078 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.663126 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.663129 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.754061 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.754253 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.754257 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.754341 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.754344 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.754442 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.754445 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.754484 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.754487 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.846230 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.846529 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.846534 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.846640 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.846644 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.846933 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.846936 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.847031 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.847034 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.938552 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:53.938791 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.938806 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.938922 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:53.938937 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:53.939062 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:53.939074 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:53.939137 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:53.939151 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.030150 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.030348 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.030363 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.030419 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.030433 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.030558 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.030570 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.030621 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.030635 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.040100 server1 become candidate, and increase the term, 1,log is: [{<nil> 0}]
+16:56:54.040264 server2 begin RequestVote, it's logentry is :[{<nil> 0}], and term is0, commitIndex is:0
+16:56:54.040278 voter2's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
+16:56:54.040281 server2 agree cadidate1,and update it's term to 1
+16:56:54.040348 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.040462 server0 begin RequestVote, it's logentry is :[{<nil> 0}], and term is0, commitIndex is:0
+16:56:54.040478 voter0's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
+16:56:54.040480 server0 agree cadidate1,and update it's term to 1
+16:56:54.040624 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.040637 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.040679 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.040692 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.040827 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.040860 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.040917 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.040930 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+Test （2A): first leader is: 1
+Test （2A): disconnect leader1
+16:56:54.121992 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.122161 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.122165 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.122214 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.122218 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.122316 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.122319 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.122368 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.122371 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.132900 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.213337 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.213599 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.213607 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.213683 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.213687 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.213961 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.213971 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.214080 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.214088 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.224052 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.304234 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.304412 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.304418 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.304471 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.304475 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.304577 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.304581 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.304629 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.304633 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.315394 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.356687 leader1 get reply from server2,result is:false ,and logentry: []
+16:56:54.394864 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.395196 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.395200 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.395361 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.395391 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.395650 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.395663 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.395786 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.395791 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.406108 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.486171 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.486381 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.486400 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.486456 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.486460 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.486586 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.486590 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.486634 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.486652 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.497082 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.574516 server0 become candidate, and increase the term, 2,log is: [{<nil> 0}]
+16:56:54.575395 server2 begin RequestVote, it's logentry is :[{<nil> 0}], and term is1, commitIndex is:0
+16:56:54.575427 voter2's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate0's LastLogTerm: 0, getLastLogIndex: 0, 
+16:56:54.575433 server2 agree cadidate0,and update it's term to 2
+16:56:54.575597 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.575948 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.575961 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.576079 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:54.576084 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.577989 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.578160 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.578163 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.578210 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.578213 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.578304 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.578307 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.578369 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.578373 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.589114 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.667010 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.667182 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.667185 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.667250 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:54.667254 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.668213 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.668387 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.668401 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.668494 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.668500 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.668495 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.668513 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.668567 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.668571 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.680076 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.758127 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.758373 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.758388 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.758444 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:54.758448 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.759096 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.759274 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.759287 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.759362 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.759367 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.759370 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.759375 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.759440 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.759444 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.771048 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.849064 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.849348 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.849368 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.849471 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.849676 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.849690 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.849852 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.849881 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.849967 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.849981 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.850144 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.850157 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.850235 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:54.850249 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.862105 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.940911 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.940968 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:54.941242 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.941246 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.941293 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:54.941297 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.941404 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.941406 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.941457 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:54.941461 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.941617 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:54.941622 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:54.941680 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:54.941685 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:54.954086 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.031385 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.031385 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.031628 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.031636 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.031639 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.031644 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.031722 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.031728 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.031896 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:55.031902 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.032167 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.032182 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.032250 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.032255 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.045206 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+Test (2A): check new leader after first disconnect
+16:56:55.122068 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.122068 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.122305 Append entries: follower1's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.122324 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.122440 leader0 get reply from server1,result is:true ,and logentry: []
+16:56:55.122446 leader0 update server1's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.122488 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.122494 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.122306 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.122557 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.122587 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.122591 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.122661 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.122666 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.122672 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:55.122677 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.122781 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.122816 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.213738 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.213942 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.214133 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.214138 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.214200 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.214205 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.214433 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.214447 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.214522 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:55.214537 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.214682 Append entries: follower1's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.214714 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.214774 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.214786 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.214972 leader0 get reply from server1,result is:true ,and logentry: []
+16:56:55.215009 leader0 update server1's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.215061 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.215065 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.305029 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.305296 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.305309 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.305318 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.305924 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.305955 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.305300 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.305962 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.306039 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.306043 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.306227 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.306243 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.306357 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:55.306362 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.306406 Append entries: follower1's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.306408 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.306497 leader0 get reply from server1,result is:true ,and logentry: []
+16:56:55.306543 leader0 update server1's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.395847 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.396048 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.396058 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.396074 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.396159 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.396164 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.396049 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.396167 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.396216 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.396219 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.396234 Append entries: follower1's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.396238 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.396322 leader0 get reply from server1,result is:true ,and logentry: []
+16:56:55.396326 leader0 update server1's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.396561 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.396565 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.396647 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:55.396651 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.486561 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.486574 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.486561 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.486592 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.486564 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.486700 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.486703 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.486729 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.486732 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.487411 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.488051 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.488077 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.488254 leader0 get reply from server2,result is:true ,and logentry: []
+16:56:55.488323 leader0 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.488576 Append entries: follower1's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.488625 Append entries: leader0's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.488752 leader0 get reply from server1,result is:true ,and logentry: []
+16:56:55.488757 leader0 update server1's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+Test （2A): older Leader Rejoin,second leader is: 0
+16:56:55.578510 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.578510 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.578903 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.578920 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.578968 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.578974 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.579061 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.579069 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.579072 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.579075 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.670135 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.670139 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.670346 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.670352 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.670443 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.670450 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.670463 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.670467 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.670534 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.670538 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.761122 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.761162 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.761660 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.761680 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.761933 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.761955 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.762121 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.762125 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.762190 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.762194 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.853090 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.853339 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.853351 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.853436 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.853457 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.853458 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.853464 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.853657 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.853663 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.854059 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.944103 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.944296 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.944303 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.944345 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:55.944350 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:55.944369 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:55.944372 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.944439 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:55.944445 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:55.944928 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:55.964906 server1 become candidate, and increase the term, 3,log is: [{<nil> 0}]
+16:56:56.034608 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.035994 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.036028 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.036154 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.036162 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.036155 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.036754 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.036799 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.037026 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.037062 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.039711 server2 become candidate, and increase the term, 3,log is: [{<nil> 0}]
+16:56:56.125985 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.126210 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.126248 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.126335 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.126338 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.126558 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.126572 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.126645 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.126650 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.127306 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.217643 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.217833 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.217840 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.217900 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.217903 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.218003 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.218005 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.218047 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.218050 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.218548 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.308058 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.308612 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.308628 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.308759 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.308782 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.308966 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.308972 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.309096 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.309101 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.309290 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.400176 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.400208 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.400351 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.400354 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.400406 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.400436 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.400451 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.400459 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.400462 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.400916 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.481609 server1 become candidate, and increase the term, 4,log is: [{<nil> 0}]
+16:56:56.490576 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.490808 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.490822 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.490951 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.490956 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.491050 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.491053 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.491102 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.491105 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.491885 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.505112 server2 become candidate, and increase the term, 4,log is: [{<nil> 0}]
+16:56:56.581655 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.582530 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.582562 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.582668 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.582693 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.583187 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.583221 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.583347 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.583353 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.583439 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.672973 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.673204 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.673210 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.673285 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.673289 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.673755 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.673781 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.673906 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.673912 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.674759 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.763371 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.763626 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.763641 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.763694 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.763698 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.764100 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.764120 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.764216 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.764220 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.765255 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.854575 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.854759 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.854782 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.854901 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.854906 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.855027 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.855030 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.855074 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.855088 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.856093 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.945751 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.945769 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.945978 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:56.945995 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:56.946055 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:56.946065 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:56.946068 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.946073 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:56.946075 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:56.946321 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.027087 server1 become candidate, and increase the term, 5,log is: [{<nil> 0}]
+16:56:57.036024 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.036178 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.036181 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.036230 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.036233 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.036323 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.036325 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.036366 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.036369 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.037322 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.083118 server2 become candidate, and increase the term, 5,log is: [{<nil> 0}]
+16:56:57.128069 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.128233 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.128254 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.128307 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.128320 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.128420 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.128435 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.128488 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.128501 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.128534 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.220039 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.220072 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.220219 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.220234 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.220283 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.220302 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.220397 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.220410 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.220462 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.220475 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.312151 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.312196 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.312473 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.312492 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.312592 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.312597 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.312698 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.312711 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.312759 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.312762 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.404088 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.404123 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.404598 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.404602 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.404715 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.404718 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.404792 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.404840 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.405011 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.405015 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.496170 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.496221 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.496520 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.496524 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.496580 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.496584 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.496666 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.496671 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.496741 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.496746 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.548029 server1 become candidate, and increase the term, 6,log is: [{<nil> 0}]
+Test （2A): there is no leader 
+Test （2A): server rejoin: 1
+16:56:57.587482 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.587505 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.587705 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.587710 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.587831 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.587913 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.588296 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.588302 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.588370 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.588374 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.663079 server2 become candidate, and increase the term, 6,log is: [{<nil> 0}]
+16:56:57.663277 server1 begin RequestVote, it's logentry is :[{<nil> 0}], and term is6, commitIndex is:0
+16:56:57.663301 voter1's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:1, cadidate2's LastLogTerm: 0, getLastLogIndex: 0, 
+16:56:57.663304 server1 disagree cadidate2,and it's term is 6
+16:56:57.678514 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.678754 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.678783 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.678852 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.678858 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.678964 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.678967 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.678974 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.679037 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.679041 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.769949 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.769949 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.770122 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.770125 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.770173 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.770178 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.770178 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.770186 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.770249 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.770254 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.861062 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.861103 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.861228 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.861232 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.861278 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.861281 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.861284 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.861281 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.861364 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.861369 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.953060 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.953077 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:57.953228 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.953231 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.953274 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:57.953278 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:57.953364 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:57.953366 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:57.953405 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:57.953408 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.045131 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.045148 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.045290 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.045292 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.045325 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.045328 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.045338 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.045341 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.045378 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.045381 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.089047 server1 become candidate, and increase the term, 7,log is: [{<nil> 0}]
+16:56:58.089328 server2 begin RequestVote, it's logentry is :[{<nil> 0}], and term is6, commitIndex is:0
+16:56:58.089342 voter2's getLastLogTerm:0 getLastLogTerm:0 commitIndex:0, votedFor:-1, cadidate1's LastLogTerm: 0, getLastLogIndex: 0, 
+16:56:58.089345 server2 agree cadidate1,and update it's term to 7
+16:56:58.089450 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.089634 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.089652 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.089752 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.089769 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.137032 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.137078 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.137332 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.137348 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.137434 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.137470 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.137593 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.137619 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.137702 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.137716 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.181040 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.181306 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.181325 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.181416 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.181452 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.228404 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.228428 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.228678 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.228682 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.228728 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.228732 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.228986 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.228990 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.229060 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.229064 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.272638 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.273030 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.273043 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.273131 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.273135 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.319894 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.319894 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.320172 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.320178 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.320197 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.320203 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.320273 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.320278 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.320307 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.320333 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.363156 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.363317 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.363332 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.363386 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.363389 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.410981 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.411014 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.411137 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.411140 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.411218 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.411221 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.411227 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.411222 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.411290 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.411295 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.455068 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.455284 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.455289 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.455356 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.455361 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.502147 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.502212 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.502451 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.502455 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.502489 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.502507 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.502552 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.502555 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.502568 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.502571 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.546038 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.546197 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.546202 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.546254 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.546257 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.594059 leader0's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.594442 leader0 get reply from server1,result is:false ,and logentry: []
+16:56:58.594475 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.594605 leader0 get reply from server2,result is:false ,and logentry: []
+16:56:58.594744 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.594747 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.594750 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.594760 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.594911 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.594934 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.594940 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.594958 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.637024 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.637250 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.637264 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.637317 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.637321 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.637422 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.637424 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.637465 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.637513 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.686037 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.686222 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.686235 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.686275 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.686280 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.686293 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.686297 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.686328 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.686331 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.729104 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.729415 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.729436 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.729576 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.729608 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.729433 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.729628 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.729783 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.729839 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.778214 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.778561 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.778587 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.778731 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.778753 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.778976 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.778980 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.779253 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.779261 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.821107 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.821369 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.821372 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.821420 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.821424 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.821518 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.821520 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.821563 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.821566 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.870053 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.870414 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.870422 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.870482 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.870486 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.870615 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.870619 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.870720 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.870749 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.913035 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.913327 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.913333 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.913398 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.913401 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.913521 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.913525 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.913569 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.913572 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.962185 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:58.962402 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.962406 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.962457 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:58.962461 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:58.962566 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:58.962568 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:58.962608 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:58.962611 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:59.004139 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:59.004474 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:59.004478 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:59.004571 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:59.004575 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:59.004808 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:59.004822 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:59.004883 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:59.004886 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:59.054034 leader1's indice: [0 0 0] and tmpcommitIndex: 0, leadercommit: 0
+16:56:59.054191 Append entries: follower0's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:59.054194 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:59.054236 leader1 get reply from server0,result is:true ,and logentry: []
+16:56:59.054239 leader1 update server0's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+16:56:59.054330 Append entries: follower2's infomation: logs:[{<nil> 0}], commitIndex:0, getLastLogIndex:0 getLastLogTerm:0
+16:56:59.054333 Append entries: leader1's infomation: entries:[], LeaderCommit:0, PrelogIndex:0, PreLogterm:0
+16:56:59.054371 leader1 get reply from server2,result is:true ,and logentry: []
+16:56:59.054374 leader1 update server2's nextIndex: [1 1 1] and matchIndex: [0 0 0] to nextIndex: 1, matchIndex: 0
+  ... Passed
+PASS
+ok  	MIT-6.824-2017/src/raft	8.014s
