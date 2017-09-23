@@ -32,14 +32,14 @@ import (
 )
 
 func init() {
+	// 利用pprof监测进程的运行状况
 	go http.ListenAndServe("localhost:6060", nil)
+
+	// 打印日志的时候，精确到时间戳
 	log.SetFlags(log.Lmicroseconds)
 }
 
-// import "bytes"
-// import "encoding/gob"
-
-// define state
+// define state that a servre in the raft can be
 const (
 	FOLLOWER int = iota
 	LEADER
@@ -49,10 +49,9 @@ const (
 // define heartbeat interval
 const (
 	HEARTBEATINTERVAL time.Duration = time.Millisecond * 30
-	COMMITINTERVAL    time.Duration = time.Millisecond * 150
 )
 
-// define log class
+// define log class undo
 const (
 	LEADERSENDHEARTBEAT int = 10
 	LEADERSENDAPPENDENTRY
@@ -62,10 +61,8 @@ const (
 	FOLLOWERRESPONSEAPPENDENTRY
 )
 
-//
-// LogEntry contains command for state machinem, and term when entry was recieved
+// LogEntry contains command for state machine, and term when entry was recieved
 // by leader
-//
 type LogEntry struct {
 	Command interface{}
 	Term    int
@@ -143,6 +140,8 @@ func (rf *Raft) getLastLogIndex() int {
 
 func (rf *Raft) getLastLogTerm() int {
 
+	//attention first log entry(index=0) is nil
+	//client log entry always begin at index=1
 	if len(rf.logs) == 1 {
 		return 0
 	}
@@ -152,7 +151,7 @@ func (rf *Raft) getLastLogTerm() int {
 // CandidateRequestVote : when a server become cadidate, it will do
 func (rf *Raft) CandidateRequestVote(requestargs RequestVoteArgs) {
 
-	//同时发送给除了自己以外的servers
+	//同时发送给除了自己以外的servers,注意考虑消息返回超时的情况
 	for server := range rf.peers {
 		if server == rf.me {
 			continue
@@ -167,7 +166,7 @@ func (rf *Raft) CandidateRequestVote(requestargs RequestVoteArgs) {
 	}
 
 	//这里要考虑到在发送的过程中出现：
-	//1、网路阻塞的情况
+	//1、选举失败，一定时间内没有majority同意选举
 	//2、收到来自新leader的heartbeat
 	//3、自己选举成功
 	select {
@@ -179,8 +178,10 @@ func (rf *Raft) CandidateRequestVote(requestargs RequestVoteArgs) {
 	}
 }
 
+//
 // return currentTerm and whether this server
 // believes it is the leader.
+//
 func (rf *Raft) GetState() (int, bool) {
 
 	var term int
@@ -227,7 +228,7 @@ func (rf *Raft) readPersist(data []byte) {
 //
 type AppendEntriesArgs struct {
 	Term         int
-	LeaderId     int
+	LeaderID     int
 	PreLogIndex  int
 	PreLogTerm   int
 	Entries      []LogEntry
@@ -264,14 +265,14 @@ type RequestVoteReply struct {
 	VoteGranted bool
 }
 
+//
 // example RequestVote RPC handler.
-// 投票时，candidate的判断
-// 接收到RequestVote RPC的时候，首先
-//1、如果vote's term > candidate‘s term vote false
+// 给candidate投票时的判断
+//1、如果voter's term > candidate‘s term vote false
 //2、如果vote’s term < candidate's term
-//将自己变成follower;如果当前尚未投票，将票投给candidate
-//3、如果vote's term = candidate‘s term,比较lastlogindex
-// RequestVote
+//   将自己变成follower
+//3、compare if the candidate's entry is at least as latest as voters
+//
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
 	rf.mu.Lock()
@@ -293,6 +294,8 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	log.Printf("voter%v's getLastLogTerm:%v getLastLogTerm:%v commitIndex:%v, votedFor:%v, cadidate%v's LastLogTerm: %v, getLastLogIndex: %v, ",
 		rf.me, rf.getLastLogTerm(), rf.getLastLogIndex(), rf.committedIndex, rf.votedFor,
 		args.CandidateID, args.LastLogTerm, args.LastLogIndex)
+
+	// if the log is at least as latest as voter's, then vote
 	if (rf.getLastLogTerm() < args.LastLogTerm || rf.getLastLogIndex() <= args.LastLogIndex) && (rf.votedFor == -1) {
 		rf.state = FOLLOWER
 		rf.votedFor = args.CandidateID
@@ -304,7 +307,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	} else {
 		reply.Term = rf.currentTerm
 		reply.VoteGranted = false
-		rf.chanGrantVote <- false
+		//rf.chanGrantVote <- false
 		log.Printf("server%v disagree cadidate%v,and it's term is %v", rf.me, args.CandidateID, rf.currentTerm)
 	}
 	return
@@ -339,9 +342,7 @@ func (rf *Raft) handleVoteResult(reply RequestVoteReply) {
 			//log.Printf("Candidate%v become Leader", rf.me)
 			rf.chanLeader <- true
 			for server := range rf.peers {
-				// if server == rf.me {
-				// 	continue
-				// }
+				// 这里matchIndex同时也更新自己，然后用中位数的方式判断哪个应该提交
 				rf.nextIndex[server] = rf.getLastLogIndex() + 1
 				rf.matchIndex[server] = 0
 			}
@@ -444,7 +445,7 @@ func (rf *Raft) SendAppnedEntriesToAllFollower() {
 		rf.mu.Lock()
 		args := AppendEntriesArgs{
 			Term:     rf.currentTerm,
-			LeaderId: rf.me,
+			LeaderID: rf.me,
 		}
 
 		args.PreLogIndex = rf.nextIndex[server] - 1
@@ -469,6 +470,7 @@ func (rf *Raft) SendAppnedEntriesToAllFollower() {
 		rf.doCommit()
 		//log.Printf("leader commit:%v", rf.committedIndex)
 	}()
+
 	//要对发送超时进行处理
 	select {
 	case <-time.After(time.Millisecond * 60):
@@ -481,7 +483,7 @@ func (rf *Raft) AppendEntries(args AppendEntriesArgs, reply *AppendEntriesReply)
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 
-	// leader‘s term < follower’s term
+	// leader‘s term < follower’s term，reply false
 	if args.Term < rf.currentTerm {
 		reply.Success = false
 		reply.Term = rf.currentTerm
@@ -491,10 +493,11 @@ func (rf *Raft) AppendEntries(args AppendEntriesArgs, reply *AppendEntriesReply)
 	log.Printf("Append entries: follower%v's infomation: logs:%v, commitIndex:%v, getLastLogIndex:%v getLastLogTerm:%v",
 		rf.me, rf.logs, rf.committedIndex, rf.getLastLogIndex(), rf.getLastLogTerm())
 	log.Printf("Append entries: leader%v's infomation: entries:%v, LeaderCommit:%v, PrelogIndex:%v, PreLogterm:%v",
-		args.LeaderId, args.Entries, args.LeaderCommit, args.PreLogIndex, args.PreLogTerm)
+		args.LeaderID, args.Entries, args.LeaderCommit, args.PreLogIndex, args.PreLogTerm)
 
-	// if rpc args's term > current term:set currentTerm and convert to follower
+	// this also act as heartbeat
 	rf.chanHeartbeat <- true
+	// if rpc args's term > current term:set currentTerm and convert to follower
 	if args.Term > rf.currentTerm {
 		rf.currentTerm = args.Term
 		rf.state = FOLLOWER
